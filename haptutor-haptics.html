@@ -64,8 +64,7 @@
         <!-- Page Title -->
         <div class="page-title light-background">
             <div class="container d-lg-flex justify-content-between align-items-center">
-                <h1 class="mb-2 mb-lg-0">A Critical Evaluation
-of Artificial Intelligence and Data Act (AIDA)</h1>
+                <h1 class="mb-2 mb-lg-0">HapTutor: A Haptic Tutor for Improving Freehand Drawing Skills</h1>
             </div>
         </div><!-- End Page Title -->
 
@@ -78,7 +77,7 @@ of Artificial Intelligence and Data Act (AIDA)</h1>
 
                     <div class="col-lg-8">
                         <div class="profile-card">
-                            <img src="assets/img/portfolio/aidaheader.jpg" alt="Profile Image" class="img-fluid">
+                            <img src="assets/img/portfolio/haptutorheader.jpg" alt="Profile Image" class="img-fluid">
                         </div>
                     </div>
                     <div class="col-lg-4 align-items-center">
@@ -89,12 +88,12 @@ of Artificial Intelligence and Data Act (AIDA)</h1>
                         <h6>My Task: </h6>
                         <p>Conducting AI ethics risk assessment</p>
                         <h6>Find full report on</h6>
-                         <div class="service-summary">
-                        <a href="services.html" class="service-btn">
-                          View More Artworks
-                          <i class="bi bi-arrow-right"></i>
-                        </a>
-                      </div>
+                        <div class="service-summary">
+                            <a href="services.html" class="service-btn">
+                                View More Artworks
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
                     </div>
 
 
@@ -105,30 +104,33 @@ of Artificial Intelligence and Data Act (AIDA)</h1>
                             <h2>Project Overview</h2>
                         </div>
                         <p>
-                            As part of an assignment in an AI Ethics course at McGill University, I authored a critical paper focused on Canada’s Artificial Intelligence and Data Act (AIDA)—a proposed legislative framework aimed at regulating high-impact AI systems to ensure transparency, accountability, and responsible innovation. The assignment offered a valuable opportunity to engage with the evolving global discourse on AI governance by examining how Canada’s regulatory approach compares with international efforts. My paper critically analyzed AIDA’s scope, strengths, and limitations, and explored whether Canada’s current strategy is adequately equipped to address the emerging risks and complexities of today’s rapidly evolving AI landscape.
+                            HapTutor is a solo project developed as part of the Human-Computer Interaction course at
+                            McGill University. The goal was to explore how haptic feedback can help novice artists
+                            improve freehand drawing — a skill that takes years of practice to master. Using the Haply
+                            2Diy device, I designed and tested a haptic training application focused on basic shapes
+                            like lines and circles.
                         </p>
-                        
+
                         <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
 
                             <div class="features mt-4">
-                                <h4>Critical Areas in Focus</h4>
+                                <h4>Problem & Inspiration</h4>
                                 <div class="row gy-3">
                                     <div class="col-md-6">
-                                        <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
-                                            <h3><i class="bi bi-1-circle-fill"></i> Model Development</h3>
+                                        <p>Many beginner artists — including myself — struggle with the precision needed
+                                            in freehand drawing. I wanted to create a tool that makes that training
+                                            process more effective, engaging, and measurable.</p>
 
-
-                                            <p>Understanding how model design and development decisions can introduce
-                                                risks.</p>
-                                        </div>
+                                        <p>While exploring Haply 2Diy in the lab, I saw potential in using its
+                                            stylus-like structure to experience haptics and a base that could mimic a
+                                            drawing pad — one that could guide or challenge users to draw more
+                                            accurately.</p>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
-
-                                            <h3><i class="bi bi-2-circle-fill"></i> Clinical Usage</h3>
-                                            <p>Evaluating how MapleScribe is used by clinicians in hospitals and the
-                                                implications for patient care and safety.</p>
+                                        <div class="profile-card">
+                                            <img src="assets/img/portfolio/haptutorheader.jpg" alt="Profile Image"
+                                                class="img-fluid">
                                         </div>
                                     </div>
 
@@ -139,12 +141,58 @@ of Artificial Intelligence and Data Act (AIDA)</h1>
                         </div>
                     </div>
 
+                    <div class="section-title" data-aos="fade-up">
+                <h2>Design & Implementation</h2>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+
+                <div class="features mt-4">
+                    <div class="row gy-3">
+                        <div class="col-md-5">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                                <h3><i class="bi bi-1-circle-fill"></i> Interface</h3>
+
+
+                                <p>Built with Processing (Java), the application allowed users to -</p>
+                                <ul>
+                                    <li>Select from a menu of basic shapes (lines, circles) to draw</li>
+                                    <li>Use the provided drawing cues like start/end points while training</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
+
+                                <h3><i class="bi bi-2-circle-fill"></i> Haptic Feedback Modes</h3>
+                                <p>Two types of force feedback were implemented using Haply’s 2Diy -</p>
+                                <ul>
+                                    <li>Corrective Feedback: Nudges the hand toward the ideal stroke</li>
+                                    <li>Disruptive Feedback: Applies random resistance to keep users alert</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
                 </div>
 
             </div>
 
         </section><!-- /Portfolio Details Section -->
-        
+
+        <section id="haptutor-study">
+            <div class="section-title" data-aos="fade-up">
+                <h2>User Study & Results</h2>
+            </div>
+            
+
+        </section>
+
         <section id="phase-results">
             <div class="section-title" data-aos="fade-up">
                 <h2>Key Identified Risks</h2>
@@ -192,7 +240,7 @@ of Artificial Intelligence and Data Act (AIDA)</h1>
                         </p>
                     </div>
                 </div>
-                 <div class="col-lg-3 col-md-6 services" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-3 col-md-6 services" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card position-relative z-1">
                         <div class="service-icon">
                             <i class="bi bi-4-circle"></i>
@@ -206,30 +254,30 @@ of Artificial Intelligence and Data Act (AIDA)</h1>
                         </p>
                     </div>
                 </div>
-                
-                
+
+
             </div>
-            
+
         </section>
 
     </main>
 
     <footer id="footer" class="footer position-relative">
 
-    <div class="container">
-      <div class="copyright text-center ">
+        <div class="container">
+            <div class="copyright text-center ">
 
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Adapted by Khushi from <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
+            </div>
+            <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you've purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+                Adapted by Khushi from <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
 
-  </footer>
+    </footer>
 
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
