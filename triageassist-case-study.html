@@ -64,14 +64,14 @@
         <!-- Page Title -->
         <div class="page-title light-background">
             <div class="container d-lg-flex justify-content-between align-items-center">
-                <h1 class="mb-2 mb-lg-0">Case Study: TriageAssist (an AI Assistant for Triaging in Hospitals)</h1>
+                <h1 class="mb-2 mb-lg-0">Case Study: TriageAssist (an AI-Assisted Patient Triage System)</h1>
             </div>
         </div><!-- End Page Title -->
 
         <!-- Portfolio Details Section -->
         <section id="portfolio-details" class="portfolio-details section">
 
-            <div class="container">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="row gy-4">
 
@@ -96,7 +96,9 @@
                             </div>
                             <div class="project-point-item" data-aos="fade-left" data-aos-delay="400">
                                 <h6><i class="bi bi-arrow-right-circle project-point-icon"></i> For More Details</h6>
-                                <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1y6KmdQ4_oAcxb-3ODjit3Pwsd_g-GQi5/view?usp=sharing" class="btn btn-primary">View Full Report</a>
+                                <a target="_blank" rel="noopener noreferrer"
+                                    href="https://drive.google.com/file/d/1y6KmdQ4_oAcxb-3ODjit3Pwsd_g-GQi5/view?usp=sharing"
+                                    class="btn btn-primary">View Full Report</a>
                             </div>
 
                         </div>
@@ -111,71 +113,93 @@
 
                         <div class="row">
                             <div class="col-lg-1"></div>
-                            <div class="col-lg-10">
+                            <div class="col-lg-10 test">
                                 <p>
-                                    This project is a structured risk assessment of MapleScribe, a hypothetical AI
-                                    system designed to assist healthcare professionals with generating medical
-                                    documentation including patient handouts, referral letters, and case summaries.
+                                    TriageAssist is an AI-based decision-support tool that helps clinicians prioritize
+                                    patients by analyzing vital signs and symptom patterns using machine learning
+                                    models. We applied the PHASE STPA methodology to systematically identify hazards,
+                                    biases, and design constraints in the system, assessing dataset quality, model
+                                    performance, and user interaction risks to inform safer, fairer, and more reliable
+                                    triage recommendations.
                                 </p>
                             </div>
                             <div class="col-lg-1"></div>
 
                         </div>
 
-                        <div class="row">
-                            <div class="col-lg-1"></div>
-                            <div class="col-lg-10">
-                                <br><p>Leveraging access to system documentation (including ML model details and dataset
-                                    characteristics), real-world use cases, and stakeholder interview transcripts, I
-                                    applied
-                                    the PHASE methodology to evaluate the system's ethical risks and potential failure
-                                    points.
-                                </p>
-                            </div>
-                            <div class="col-lg-1"></div>
-
-                        </div>
 
                     </div>
                     <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
 
                         <div class="features mt-4">
-                            <span class="badge-text"><h4>Critical Areas in Focus</h4></span>
+                            <span class="badge-text">
+                                <h4>Critical Areas in Focus</h4>
+                            </span>
+                            <div class="row gy-3 d-flex justify-content-center">
+
+                                <div class="col-md-5">
+                                    <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
+
+                                        <h3><i class="bi bi-1-circle-fill"></i> Data Curation</h3>
+                                        <p>Examining training datasets for quality, completeness, and biases that may
+                                            affect system accuracy and fairness.</p>
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </div>
                             <div class="row gy-3">
-                                <div class="col-md-6">
-                                    <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
-                                        <h3><i class="bi bi-1-circle-fill"></i> Model Development</h3>
+                                <div class="col-md-1">
+
+                                </div>
+                                <div class="col-md-5 critical-area">
+                                    <div class="feature-item critical-area" data-aos="fade-up" data-aos-delay="400">
+                                        <h3><i class="bi bi-2-circle-fill"></i> Model Development</h3>
 
 
                                         <p>Understanding how model design and development decisions can introduce
                                             risks.</p>
                                     </div>
                                 </div>
+                                <div class="col-md-5 critical-area">
+                                    <div class="feature-item critical-area" data-aos="fade-up" data-aos-delay="500">
 
-                                <div class="col-md-6">
-                                    <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
-
-                                        <h3><i class="bi bi-2-circle-fill"></i> Clinical Usage</h3>
-                                        <p>Evaluating how MapleScribe is used by clinicians in hospitals and the
+                                        <h3><i class="bi bi-3-circle-fill"></i> Clinical Usage</h3>
+                                        <p>Evaluating how TriageAssist is used by clinicians in hospitals and the
                                             implications for patient care and safety.</p>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
+
+                        
 
 
                     </div>
                 </div>
-
+               
 
 
             </div>
 
         </section><!-- /Portfolio Details Section -->
+
+         <div class="row">
+                            <div class="col-lg-3">
+                                <div class="project-picture">
+                        <img src="assets/img/portfolio/triage-assist/triage-workflow.png" alt="Profile Image" class="img-fluid">
+                    </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <h3>What is TriageAssist anyway?</h3>
+                            </div>
+                        </div>
         <section id="phase-details" class="phase-details">
             <div class="section-title" data-aos="fade-up">
-                <h2>Methodology : PHASE</h2>
+                <h2>Methodology : STPA PHASE</h2>
             </div>
 
             <div class="row process-details">
@@ -197,38 +221,74 @@
             <div class="process-details">
                 <br>
                 <h4><i class="bi bi-asterisk"></i> Mapping System Interactions and Failure Pathways</h4>
-                
-                
-                    <div class="col-lg-11">
-                        <p>After identifying potential losses, the next step was to trace how those failures could actually
+
+
+                <div class="col-lg-11">
+                    <p>After identifying potential losses, the next step was to trace how those failures could actually
                         happen. This led me to investigating various interactions between system stakeholders, the
                         system and its components.</p>
-                        
-                    </div>
-                    
-               
-                
+
+                </div>
+
+
+
 
                 <div class="row ">
-                    <div class="col-lg-5">
+                    <div class="col-lg-6">
                         <div class="project-picture">
-                            <img src="assets/img/portfolio/s1-ctrl.png" alt="Profile Image" class="img-fluid">
+                            <img src="assets/img/portfolio/triage-assist/cd-modeldev.png" alt="Profile Image"
+                                class="img-fluid">
                         </div>
                     </div>
-                    <div class="col-lg-1"></div>
+
                     <div class="col-lg-5">
                         <div class="project-picture">
-                            <img src="assets/img/portfolio/s2-ctrl.png" alt="Profile Image" class="img-fluid">
+                            <img src="assets/img/portfolio/triage-assist/cd-usage.png" alt="Profile Image"
+                                class="img-fluid">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-11">
-                        
-                        <p>By carefully tracing these interaction points, I was able to identify risk scenarios — specific
+
+                    <p>By carefully tracing these interaction points, I was able to identify risk scenarios — specific
                         ways in which the system could lead to negative outcomes due to stakeholder actions or system
                         limitations.
-                        </p>
+                    </p>
+                </div>
+            </div>
+            <div class="process-details">
+
+                <h4><i class="bi bi-asterisk"></i> Analysing Dataset</h4>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="project-picture">
+                            <img src="assets/img/portfolio/triage-assist/data-dist.png" alt="Profile Image"
+                                class="img-fluid">
+                        </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="project-picture">
+                            <img src="assets/img/portfolio/triage-assist/diver-dist.png" alt="Profile Image"
+                                class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="project-picture">
+                            <img src="assets/img/portfolio/triage-assist/gen-dist.png" alt="Profile Image"
+                                class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="project-picture">
+                            <img src="assets/img/portfolio/triage-assist/age-dist.png" alt="Profile Image"
+                                class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
 
         </section>
@@ -236,36 +296,39 @@
             <div class="section-title" data-aos="fade-up">
                 <h2>Key Risks Identified</h2>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-3 col-md-6 services" data-aos="fade-up" data-aos-delay="100">
+            <div class="row d-flex align-items-stretch justify-content-center">
+                <div class="col-lg-3 d-flex align-items-stretch col-md-6 services" data-aos="fade-up"
+                    data-aos-delay="100">
                     <div class="service-card position-relative z-1">
                         <div class="service-icon">
                             <i class="bi bi-1-circle"></i>
                         </div>
                         <h3>
-                            Bias in Training Data
+                            Biases in Training Data
 
                         </h3>
                         <p>
-                            Uneven performance across patients
+                            Unfair outcomes across patients.
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 services" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-3 d-flex align-items-stretch col-md-6 services" data-aos="fade-up"
+                    data-aos-delay="100">
                     <div class="service-card position-relative z-1">
                         <div class="service-icon">
                             <i class="bi bi-2-circle"></i>
                         </div>
                         <h3>
-                            Content Inaccuracy
+                            Prediction Inaccuracy
 
                         </h3>
                         <p>
-                            Risk of clinically incorrect or misleading content.
+                            Incorrectly classifying critical patients as not having heart disease.
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 services" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-3 d-flex align-items-stretch col-md-6 services" data-aos="fade-up"
+                    data-aos-delay="100">
                     <div class="service-card position-relative z-1">
                         <div class="service-icon">
                             <i class="bi bi-3-circle"></i>
@@ -275,11 +338,17 @@
 
                         </h3>
                         <p>
-                            Clinicians trusting AI without adequate review
+                            Clinicians trusting AI without adequate review.
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 services" data-aos="fade-up" data-aos-delay="100">
+
+
+
+            </div>
+            <div class="row">
+                <div class="col-lg-3 d-flex align-items-stretch col-md-6 services" data-aos="fade-up"
+                    data-aos-delay="100">
                     <div class="service-card position-relative z-1">
                         <div class="service-icon">
                             <i class="bi bi-4-circle"></i>
@@ -289,11 +358,41 @@
 
                         </h3>
                         <p>
-                            Outputs aren’t lucid or easily verifiable by users.
+                            No provision of justification for results.
                         </p>
                     </div>
                 </div>
+                <div class="col-lg-3 d-flex align-items-stretch col-md-6 services" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="service-card position-relative z-1">
+                        <div class="service-icon">
+                            <i class="bi bi-5-circle"></i>
+                        </div>
+                        <h3>
+                            Outdated Model
 
+                        </h3>
+                        <p>
+                            Model fails to reflect new medical knowledge and patterns.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 d-flex align-items-stretch col-md-6 services" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="service-card position-relative z-1">
+                        <div class="service-icon">
+                            <i class="bi bi-6-circle"></i>
+                        </div>
+                        <h3>
+                            Poor UI/UX
+
+                        </h3>
+                        <p>
+                            Absence of user feedback, input validation, and error alerts, increasing risk of undetected
+                            mistakes.
+                        </p>
+                    </div>
+                </div>
 
             </div>
 
@@ -304,17 +403,46 @@
                 <h2>What I Learned</h2>
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
                     <div class="col-lg-3"></div>
-                    <div class="col-lg-6"><p><i class="bi bi-bookmark-heart-fill project-point-icon"></i> Even simple user interactions with a system can reveal critical vulnerabilities when carefully examined.</p></div>
+                    <div class="col-lg-6">
+                        <p><i class="bi bi-bookmark-heart-fill project-point-icon"></i> Even simple user interactions
+                            with a system can reveal critical vulnerabilities when carefully examined.</p>
+                    </div>
                 </div>
                 <div class="row" data-aos="fade-up" data-aos-delay="200">
                     <div class="col-lg-3"></div>
-                    <div class="col-lg-6"><p><i class="bi bi-bookmark-heart-fill project-point-icon"></i> Scrutinizing a system through multiple stakeholder perspectives uncovers risks that may otherwise go unnoticed.</p></div>
+                    <div class="col-lg-6">
+                        <p><i class="bi bi-bookmark-heart-fill project-point-icon"></i> Scrutinizing a system through
+                            multiple stakeholder perspectives uncovers risks that may otherwise go unnoticed.</p>
+                    </div>
                 </div>
                 <div class="row" data-aos="fade-up" data-aos-delay="300">
                     <div class="col-lg-3"></div>
-                    <div class="col-lg-6"><p><i class="bi bi-bookmark-heart-fill project-point-icon"></i> Importance of continuous, iterative design for a successful product</p></div>
+                    <div class="col-lg-6">
+                        <p><i class="bi bi-bookmark-heart-fill project-point-icon"></i> Importance of continuous,
+                            iterative design for a successful product</p>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <section id="questions" class="questions">
+            <div class="row">
+                <div class="col-6">
+                    <h4>Curious about the project?</h4>
+                    <h2><span class="question-highlight">Get in touch..</span></h2>
+                </div>
+                <div class="row col-6">
+                   <div class="col-6 question-icons d-flex justify-content-center align-items-center">
+                        <a target="_blank" rel="noopener noreferrer" href="mailto:naik.khushi5423@gmail.com"><i class="bi bi-envelope"></i></a>
+                       
+                   </div>
+                   <div class="col-6 question-icons d-flex justify-content-center align-items-center">
+                        
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/khushinaik20/"><i class="bi bi-linkedin"></i></a>
+                   </div>
+                </div>
+            </div>
+
         </section>
 
     </main>
