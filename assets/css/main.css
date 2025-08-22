@@ -723,7 +723,8 @@ section,
 }
 
 .hero .hero-actions .btn.btn-outline:hover {
-  background-color: var(--accent-color);
+  /*background-color: var(--accent-color);*/
+  background: linear-gradient(to right, #fc466b, var(--accent-color)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: var(--contrast-color);
   transform: translateY(-2px);
 }
@@ -930,6 +931,13 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+.hobby-highlight{
+  font-weight: 600;
+}
+
+.about-content .about-highlights{
+  font-weight: 600;
+}
 
 .about-hobby {
   font-size: 30px;
@@ -957,7 +965,8 @@ section,
 }
 
 .about-content .description .btn.btn-outline:hover {
-  background-color: var(--accent-color);
+  /*background-color: var(--accent-color);*/
+  background: linear-gradient(to right, #fc466b, var(--accent-color)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: var(--contrast-color);
   transform: translateY(-2px);
 }
@@ -1796,14 +1805,23 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 30%);
+  /*background: linear-gradient(
+  to right,
+  rgba(252, 70, 107, 0.95),   
+  rgba(160, 132, 202, 0.95)   
+  );*/
+  
+  /*background-color: color-mix(in srgb, var(--accent-color), transparent 30%);*/
+  background-color: color-mix(in srgb, var(--muted-accent), transparent 40%);
   border-radius: 50%;
   font-size: 18px;
   transition: 0.3s;
 }
 
 .portfolio .portfolio-wrap .portfolio-info .portfolio-links a:hover {
-  background-color: var(--accent-color);
+  /*background: linear-gradient(to right, #fc466b, var(--accent-color)); *//* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /*background-color: var(--accent-color);*/
+  background-color: var(--muted-accent);
   transform: translateY(-3px);
 }
 
@@ -1955,7 +1973,8 @@ section,
 }
 
 .services .service-header .service-summary .service-btn:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 15%);
+  /*background-color: color-mix(in srgb, var(--accent-color), transparent 15%);*/
+  background: linear-gradient(to right, #fc466b, var(--accent-color)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: var(--contrast-color);
 }
 
@@ -2458,7 +2477,7 @@ section,
 
 .project-point-item h6 {
   /*font-size: 1rem;*/
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 400;
   color: var(--accent-color);
   margin-bottom: 0.25rem;
@@ -2473,8 +2492,9 @@ section,
 }
 
 .project-point-icon{
-  font-size: 1.25rem;
-  color: var(--default-color);
+  font-size: 1rem;
+  /*color: var(--default-color);*/
+  color: var(--accent-color);
   font-weight: 700;
   margin-right: 0.3rem;
 }
@@ -2877,6 +2897,10 @@ section,
 
 
 @media (max-width: 992px) {
+  .questions{
+    margin-left: 1rem;
+  }
+
   .questions .question-highlight{
     font-size: 55px;
     text-align: center;
@@ -2939,6 +2963,7 @@ section,
 
 .takeaways .project-point-icon{
   font-size: 3.5rem;
+  color: var(--default-color);
 }
 
 
@@ -3094,5 +3119,16 @@ section,
 
 .first-plan-item{
   padding-top: 0;
+}
+
+.chrome-btn {
+  background: linear-gradient(to right, #fc466b, var(--accent-color)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: var(--contrast-color);
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.portfolio-header img{
+  box-shadow: 1px 1px 12px var(--default-color);
 }
 
