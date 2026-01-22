@@ -3027,8 +3027,8 @@ section,
 }
 
 .project-heading-icon{
-  font-size: 1.6rem;
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .plan-item .row{
@@ -3198,5 +3198,27 @@ section,
 }
 
 .hap-prob{
+  margin-top: 1.5rem;
+}
+
+.triage-assist-content{
+  padding-left: 4rem;
+}
+
+.tool-text .small-badge-text {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 20%));
+  color: var(--contrast-color);
+  padding: 0.5rem 1.0rem;
+  border-radius: 2rem;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 0.5rem;
+}
+
+.triage-pic{
   margin-top: 1.5rem;
 }
