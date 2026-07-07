@@ -13,20 +13,72 @@
    * Header toggle
    */
   const headerToggleBtn = document.querySelector('.header-toggle');
+  const headerEl = document.querySelector('#header');
 
   function headerToggle() {
-    document.querySelector('#header').classList.toggle('header-show');
-    headerToggleBtn.classList.toggle('bi-list');
-    headerToggleBtn.classList.toggle('bi-x');
+    if (!headerEl || !headerToggleBtn) return;
+    headerEl.classList.toggle('header-show');
+    const toggleIcon = headerToggleBtn.querySelector('i') || headerToggleBtn;
+    toggleIcon.classList.toggle('bi-list');
+    toggleIcon.classList.toggle('bi-x');
   }
-  headerToggleBtn.addEventListener('click', headerToggle);
+
+  if (headerToggleBtn) {
+    headerToggleBtn.addEventListener('click', headerToggle);
+  }
+
+  /**
+   * Top header scroll state
+   */
+  if (headerEl && headerEl.classList.contains('header-top')) {
+    function updateHeaderScroll() {
+      headerEl.classList.toggle('header-scrolled', window.scrollY > 40);
+    }
+    window.addEventListener('load', updateHeaderScroll);
+    document.addEventListener('scroll', updateHeaderScroll);
+  }
+
+  /**
+   * Dark mode toggle
+   */
+  const themeToggleBtn = document.querySelector('.theme-toggle');
+
+  function updateThemeIcon(theme) {
+    if (!themeToggleBtn) return;
+    const icon = themeToggleBtn.querySelector('i');
+    if (!icon) return;
+    icon.classList.toggle('bi-moon-stars', theme !== 'dark');
+    icon.classList.toggle('bi-sun', theme === 'dark');
+  }
+
+  function setTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+    try {
+      localStorage.setItem('theme', theme);
+    } catch (e) {}
+    updateThemeIcon(theme);
+  }
+
+  if (themeToggleBtn) {
+    const savedTheme = localStorage.getItem('theme');
+    const initialTheme = savedTheme || (document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+    updateThemeIcon(initialTheme);
+    themeToggleBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      setTheme(isDark ? 'light' : 'dark');
+    });
+  }
 
   /**
    * Hide mobile nav on same-page/hash links
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
-      if (document.querySelector('.header-show')) {
+      if (headerEl && headerEl.classList.contains('header-show')) {
         headerToggle();
       }
     });

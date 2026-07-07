@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <script src="assets/js/theme-init.js"></script>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Khushi Naik | Portfolio</title>
     <meta name="description" content="">
@@ -40,23 +41,27 @@
 
 <body class="portfolio-details-page">
 
-    <header id="header" class="header dark-background d-flex flex-column justify-content-center">
-        <i class="header-toggle d-xl-none bi bi-list"></i>
-
-        <div class="header-container d-flex flex-column align-items-start">
-            <nav id="navmenu" class="navmenu">
-                <ul>
-                    <li><a href="index.html#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-                    <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
-                    <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-                    <li><a href="index.html#services"><i class="bi bi-balloon-heart navicon"></i> Passion Projects</a>
-                    </li>
-                    <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-                </ul>
-            </nav>
-
+    <header id="header" class="header header-top">
+      <div class="header-container">
+        <a href="index.html" class="logo">KHUSHI<span class="logo-accent">.</span></a>
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#services">Passion Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+          <button type="button" class="header-toggle d-lg-none" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+          </button>
         </div>
-
+      </div>
     </header>
 
     <main class="main">

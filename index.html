@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <script src="assets/js/theme-init.js"></script>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Khushi Naik | Portfolio</title>
   <meta name="description" content="">
@@ -40,22 +41,27 @@
 
 <body class="index-page">
 
-  <header id="header" class="header dark-background d-flex flex-column justify-content-center">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-
-    <div class="header-container d-flex flex-column align-items-start">
+  <header id="header" class="header header-top">
+    <div class="header-container">
+      <a href="#hero" class="logo">KHUSHI<span class="logo-accent">.</span></a>
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-          <li><a href="#about"><i class="bi bi-person navicon"></i> About</a></li>
-          <li><a href="#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-          <li><a href="#services"><i class="bi bi-balloon-heart navicon"></i> Passion Projects</a></li>
-          <li><a href="#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#services">Passion Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+        <button type="button" class="header-toggle d-lg-none" aria-label="Toggle navigation">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
     </div>
-
   </header>
 
   <main class="main">
@@ -114,113 +120,13 @@
 
     </section><!-- /Hero Section -->
 
-    <!-- About Section -->
-    <section id="about" class="about section">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        
-        <div class="row">
-          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-            
-            <div class="profile-card">
-              
-
-              <img src="assets/img/profile/khushi-pic-3.jpeg" alt="Profile Image" class="img-fluid">
-
-
-
-            </div>
-          </div>
-
-          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
-            
-            <div class="about-content">
-              <div class="section-header">
-                <span class="badge-text">Get to Know Me</span>
-                <h3>Engineer by training, Designer by passion, Researcher by choice</h3>
-              </div>
-
-              <div class="description">
-                
-                <p>I’m a Master's student in Electrical Engineering at <span class="about-highlights">McGill University, Montreal</span>, currently conducting
-                  research as part of the Shared Reality Lab, under the supervision of Professor Jeremy Cooperstock. My
-                  academic and professional journey sits at the <span class="about-highlights">intersection of Human-Computer Interaction</span> (User
-                  Experience (UX) and Interaction Design, Augmented Reality (AR)) and <span class="about-highlights">Software Development</span>. I am also
-                  very enthusiastic about <span class="about-highlights">AI ethics</span> and governance.</p>
-
-                <p>My research focuses on designing and developing an AR-based alternative to conventional vital
-                  monitors, aimed at improving how critical patient alarms are communicated in high-stakes clinical
-                  settings. The project seeks to enhance situational awareness for healthcare professionals and
-                  contribute to better patient outcomes.</p>
-
-                <p>Before grad school, I worked as a <span class="about-highlights">Software Engineer at Ericsson R&D, India</span>, gaining 1.5 years of
-                  hands-on industry experience in building scalable software systems. I’ve also held internships at ECL
-                  in Auckland and Jajal Medical, where I worked on UX design for 360 Virtual tours and AR visualization
-                  for healthcare, respectively.</p>
-
-                <p>In a nutshell, <span class="about-highlights">I’m here to build tech that is grounded in real human needs..</span><br><span
-                    class="about-hobby">What I do outside work?</span> <a href="#services" class="btn btn-outline">Know
-                    Me Better</a></p>
-              </div>
-
-            </div>
-          </div>
-          
-        </div>
-
-      </div>
-
-    </section><!-- /About Section -->
-
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills section">
+     <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Skills</h2>
-        <p>Here’s a quick look at the tools, technologies, and methods I’ve picked up along the way and continue to build on.</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row">
-          <div class="col-lg-1"></div>
-          <div class="col-lg-10">
-            <div class="row skills-category" data-aos="fade-up" data-aos-delay="200">
-              <div class="col-lg-6 skill-list">
-                <ul>
-                  <li><i class="bi bi-patch-check skill-check"></i> UX Design</li>
-                  <li><i class="bi bi-patch-check skill-check"></i> Figma, Prototyping</li>
-                  <li><i class="bi bi-patch-check skill-check"></i> HTML, CSS</li>
-                  <li><i class="bi bi-patch-check skill-check"></i> JavaScript, NodeJs</li>
-                  <li><i class="bi bi-patch-check skill-check"></i> PHASE (STPA) Risk Assessment for AI based Algorithmic Systems</li>
-                </ul>
-              </div>
-              <div class="col-lg-6 skill-list">
-                <ul>
-                  <li><i class="bi bi-patch-check skill-check"></i> Java</li>
-                  <li><i class="bi bi-patch-check skill-check"></i> Unity</li>
-                  <li><i class="bi bi-patch-check skill-check"></i> C#</li>
-                  <li><i class="bi bi-patch-check skill-check"></i> Python</li>
-                  <li><i class="bi bi-patch-check skill-check"></i> MySQL</li>
-                </ul>
-              </div>
-            </div><!-- End Frontend Skills -->
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- /Skills Section -->
-
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section col-lg-11">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
+        <h2>Featured Work</h2>
         <div class="row">
           <div class="col-md-2"></div>
         <div class="col-md-8">
@@ -234,9 +140,7 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <div class="row">
-            <div class="col-lg-3 filter-sidebar">
+           <div class="filter-sidebar">
               <div class="filters-wrapper" data-aos="fade-right" data-aos-delay="150">
                 <ul class="portfolio-filters isotope-filters">
                   <li data-filter="*" class="filter-active">All Projects</li>
@@ -246,8 +150,10 @@
                 </ul>
               </div>
             </div>
+          <div class="row">
+           
 
-            <div class="col-lg-9">
+            <div class="col-lg-12">
               <div class="row gy-4 portfolio-container isotope-container" data-aos="fade-up" data-aos-delay="200">
 
                 <div class="col-lg-6 col-md-6 portfolio-item isotope-item filter-design filter-automotive">
@@ -370,6 +276,108 @@
 
     </section><!-- /Portfolio Section -->
 
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        
+        <div class="row">
+          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+            
+            <div class="profile-card">
+              
+
+              <img src="assets/img/profile/khushi-pic-3.jpeg" alt="Profile Image" class="img-fluid">
+
+
+
+            </div>
+          </div>
+
+          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="300">
+            
+            <div class="about-content">
+              <div class="section-header">
+                <span class="badge-text">Get to Know Me</span>
+                <h3>Engineer by training, Designer by passion, Researcher by choice</h3>
+              </div>
+
+              <div class="description">
+                
+                <p>I’m a Master's student in Electrical Engineering at <span class="about-highlights">McGill University, Montreal</span>, currently conducting
+                  research as part of the Shared Reality Lab, under the supervision of Professor Jeremy Cooperstock. My
+                  academic and professional journey sits at the <span class="about-highlights">intersection of Human-Computer Interaction</span> (User
+                  Experience (UX) and Interaction Design, Augmented Reality (AR)) and <span class="about-highlights">Software Development</span>. I am also
+                  very enthusiastic about <span class="about-highlights">AI ethics</span> and governance.</p>
+
+                <p>My research focuses on designing and developing an AR-based alternative to conventional vital
+                  monitors, aimed at improving how critical patient alarms are communicated in high-stakes clinical
+                  settings. The project seeks to enhance situational awareness for healthcare professionals and
+                  contribute to better patient outcomes.</p>
+
+                <p>Before grad school, I worked as a <span class="about-highlights">Software Engineer at Ericsson R&D, India</span>, gaining 1.5 years of
+                  hands-on industry experience in building scalable software systems. I’ve also held internships at ECL
+                  in Auckland and Jajal Medical, where I worked on UX design for 360 Virtual tours and AR visualization
+                  for healthcare, respectively.</p>
+
+                <p>In a nutshell, <span class="about-highlights">I’m here to build tech that is grounded in real human needs..</span><br><span
+                    class="about-hobby">What I do outside work?</span> <a href="#services" class="btn btn-outline">Know
+                    Me Better</a></p>
+              </div>
+
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Skills</h2>
+        <p>Here’s a quick look at the tools, technologies, and methods I’ve picked up along the way and continue to build on.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row">
+          <div class="col-lg-1"></div>
+          <div class="col-lg-10">
+            <div class="row skills-category" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-6 skill-list">
+                <ul>
+                  <li><i class="bi bi-patch-check skill-check"></i> UX Design</li>
+                  <li><i class="bi bi-patch-check skill-check"></i> Figma, Prototyping</li>
+                  <li><i class="bi bi-patch-check skill-check"></i> HTML, CSS</li>
+                  <li><i class="bi bi-patch-check skill-check"></i> JavaScript, NodeJs</li>
+                  <li><i class="bi bi-patch-check skill-check"></i> PHASE (STPA) Risk Assessment for AI based Algorithmic Systems</li>
+                </ul>
+              </div>
+              <div class="col-lg-6 skill-list">
+                <ul>
+                  <li><i class="bi bi-patch-check skill-check"></i> Java</li>
+                  <li><i class="bi bi-patch-check skill-check"></i> Unity</li>
+                  <li><i class="bi bi-patch-check skill-check"></i> C#</li>
+                  <li><i class="bi bi-patch-check skill-check"></i> Python</li>
+                  <li><i class="bi bi-patch-check skill-check"></i> MySQL</li>
+                </ul>
+              </div>
+            </div><!-- End Frontend Skills -->
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Skills Section -->
+
+
+   
     <!-- Services Section -->
     <section id="services" class="services section">
 

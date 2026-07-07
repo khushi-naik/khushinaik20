@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <script src="assets/js/theme-init.js"></script>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Khushi Naik | Portfolio</title>
     <meta name="description" content="">
@@ -28,6 +29,7 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
+   
 
     <!-- =======================================================
   * Template Name: SnapFolio
@@ -36,27 +38,685 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+    <style>
+    /*
+     * PAGE-LEVEL STYLES — VitalViz Case Study
+     * All variables reference existing main.css tokens:
+     *   --accent-color: #7F56D9   --background-color: #f6f3fb
+     *   --default-color: #444     --heading-color: #1A1A1A
+     *   --surface-color: #F9F7FB  --muted-accent: #BFA6E1
+     *   --contrast-color: #fff    --heading-font: Poppins
+     *   --default-font: Inter
+     */
+
+    /* ─── HERO ─────────────────────────────── */
+    .vv-hero {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 48px rgba(0,0,0,0.11);
+    }
+    .vv-hero img {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+    .vv-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 30%, rgba(16,8,36,0.75) 100%);
+    }
+    .vv-hero-text {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 28px 36px;
+    }
+    .vv-hero-text h1 {
+      font-family: var(--heading-font);
+      font-size: clamp(20px, 3vw, 36px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+      margin: 0;
+    }
+    .vv-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .vv-tag {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.92);
+      border: 1px solid rgba(255,255,255,0.26);
+      backdrop-filter: blur(6px);
+      letter-spacing: 0.03em;
+    }
+
+    /* ─── META STRIP ────────────────────────── */
+    .vv-meta {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 78%);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 24px 0 0;
+    }
+    .vv-meta-cell {
+      padding: 18px 22px;
+      border-right: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+    }
+    .vv-meta-cell:last-child { border-right: none; }
+    .vv-meta-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-bottom: 5px;
+    }
+    .vv-meta-value {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--heading-color);
+      line-height: 1.4;
+    }
+    .vv-report-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #fff !important;
+      background: var(--accent-color);
+      padding: 7px 15px;
+      border-radius: 8px;
+      text-decoration: none !important;
+      transition: all 0.25s;
+      margin-top: 2px;
+    }
+    .vv-report-btn:hover {
+      background: color-mix(in srgb, var(--accent-color), black 14%);
+      transform: translateY(-1px);
+    }
+
+    /* ─── STICKY PAGE NAV ───────────────────── */
+    .vv-page-nav {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin: 28px 0 0;
+      position: sticky;
+      top: 12px;
+      z-index: 50;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .vv-page-nav a {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: color-mix(in srgb, var(--default-color), transparent 35%);
+      padding: 6px 14px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .vv-page-nav a:hover, .vv-page-nav a.active {
+      background: color-mix(in srgb, var(--accent-color), transparent 88%);
+      color: var(--accent-color);
+    }
+
+    /* ─── OVERVIEW CARD ─────────────────────── */
+    .vv-overview {
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 32px 0 48px;
+      box-shadow: 0 8px 40px color-mix(in srgb, var(--accent-color), transparent 88%);
+    }
+    .vv-overview-header {
+      padding: 24px 28px 0;
+    }
+    .vv-tl-chip {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: color-mix(in srgb, var(--accent-color), transparent 85%);
+      color: var(--accent-color);
+      padding: 4px 12px;
+      border-radius: 100px;
+      display: inline-block;
+    }
+    .vv-overview-heading {
+      font-family: var(--heading-font);
+      font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+      font-weight: 700;
+      color: var(--heading-color);
+      margin: 10px 0 6px;
+      line-height: 1.3;
+    }
+    .vv-overview-hook {
+      font-size: 14px;
+      color: color-mix(in srgb, var(--default-color), transparent 28%);
+      margin: 0;
+      line-height: 1.55;
+      max-width: 640px;
+    }
+    .vv-overview-tabs {
+      display: flex;
+      gap: 6px;
+      padding: 20px 28px 0;
+      flex-wrap: wrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .vv-overview-tabs::-webkit-scrollbar { display: none; }
+    .vv-tab-btn {
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 100px;
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
+      background: transparent;
+      color: color-mix(in srgb, var(--default-color), transparent 22%);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .vv-tab-btn i { font-size: 13px; opacity: 0.75; }
+    .vv-tab-btn:hover {
+      background: color-mix(in srgb, var(--accent-color), transparent 92%);
+      color: var(--accent-color);
+      border-color: color-mix(in srgb, var(--accent-color), transparent 55%);
+      transform: translateY(-1px);
+    }
+    .vv-tab-btn.active {
+      background: var(--accent-color);
+      color: #fff;
+      border-color: var(--accent-color);
+      box-shadow: 0 4px 16px color-mix(in srgb, var(--accent-color), transparent 50%);
+    }
+    .vv-tab-btn.active i { opacity: 1; }
+    .vv-overview-panels {
+      padding: 22px 28px 8px;
+      min-height: 148px;
+    }
+    .vv-overview-panel {
+      display: none;
+    }
+    .vv-overview-panel.active {
+      display: block;
+      animation: vvPanelIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    @keyframes vvPanelIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .vv-overview-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .vv-overview-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 14.5px;
+      line-height: 1.62;
+      color: color-mix(in srgb, var(--default-color), transparent 8%);
+      padding: 12px 14px;
+      background: color-mix(in srgb, var(--accent-color), transparent 94%);
+      border-radius: 10px;
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 88%);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    }
+    .vv-overview-list li:hover {
+      transform: translateX(5px);
+      border-color: color-mix(in srgb, var(--accent-color), transparent 65%);
+      box-shadow: 0 4px 18px color-mix(in srgb, var(--accent-color), transparent 86%);
+    }
+    .vv-overview-list li::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent-color);
+      flex-shrink: 0;
+      margin-top: 9px;
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color), transparent 75%);
+    }
+    .vv-overview-list li strong {
+      font-weight: 600;
+      color: var(--heading-color);
+    }
+    .vv-overview-stats {
+      border-top: 1px solid color-mix(in srgb, var(--accent-color), transparent 82%);
+      padding: 20px 28px 24px;
+    }
+    .vv-stat-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .vv-stat {
+      background: color-mix(in srgb, var(--accent-color), transparent 91%);
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 78%);
+      border-radius: 12px;
+      padding: 16px 12px;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .vv-stat:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px color-mix(in srgb, var(--accent-color), transparent 82%);
+    }
+    .vv-stat-num {
+      font-family: var(--heading-font);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent-color);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .vv-stat-lbl {
+      font-size: 11.5px;
+      color: color-mix(in srgb, var(--default-color), transparent 32%);
+      line-height: 1.45;
+    }
+    .vv-stat-sub {
+      font-size: 10.5px;
+      opacity: 0.75;
+    }
+
+    /* ─── SECTION WRAPPERS ──────────────────── */
+    .vv-section { padding-top: 80px; scroll-margin-top: 20px; }
+    .vv-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-bottom: 8px;
+    }
+    .vv-h2 {
+      font-family: var(--heading-font);
+      font-size: clamp(22px, 2.8vw, 32px);
+      font-weight: 700;
+      color: var(--heading-color);
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+    .vv-lead {
+      font-size: 16px;
+      color: color-mix(in srgb, var(--default-color), transparent 26%);
+      line-height: 1.82;
+      max-width: 700px;
+      margin-bottom: 36px;
+    }
+    .vv-divider {
+      border: none;
+      border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      margin: 80px 0 0;
+    }
+
+    /* ─── PROBLEM CARDS ─────────────────────── */
+    .vv-cards {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .vv-card {
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      border-radius: 14px;
+      padding: 22px;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .vv-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .vv-card-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px;
+      margin-bottom: 14px;
+    }
+    .vv-card h4 { font-size: 14.5px; font-weight: 600; color: var(--heading-color); margin-bottom: 8px; line-height: 1.35; }
+    .vv-card p { font-size: 13.5px; color: color-mix(in srgb, var(--default-color), transparent 26%); line-height: 1.66; margin: 0; }
+
+    /* ─── ANNOTATION ────────────────────────── */
+    .vv-note {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: color-mix(in srgb, var(--accent-color), transparent 90%);
+      border-left: 3px solid var(--accent-color);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      margin: 24px 0;
+    }
+    .vv-note > i { color: var(--accent-color); font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+    .vv-note p { font-size: 13.5px; color: var(--default-color); line-height: 1.65; margin: 0; }
+    .vv-note p strong { color: var(--heading-color); font-weight: 600; }
+
+    /* ─── FEATURE LIST ──────────────────────── */
+    .vv-feats { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+    .vv-feats li { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; color: color-mix(in srgb, var(--default-color), transparent 16%); line-height: 1.65; }
+    .vv-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-color); flex-shrink: 0; margin-top: 8px; }
+
+    /* ─── VIDEO ─────────────────────────────── */
+    .vv-vid {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #111;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.13);
+    }
+    .vv-vid iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+    .vv-cap { font-size: 12px; color: color-mix(in srgb, var(--default-color), transparent 40%); text-align: center; margin-top: 8px; font-style: italic; }
+
+    /* ─── QUOTES ────────────────────────────── */
+    .vv-quote {
+      background: var(--surface-color);
+      border-left: 3px solid var(--accent-color);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin-bottom: 14px;
+    }
+    .vv-quote p { font-size: 15px; font-style: italic; color: var(--heading-color); line-height: 1.65; margin-bottom: 8px; }
+    .vv-quote span { font-size: 12px; color: color-mix(in srgb, var(--default-color), transparent 36%); font-weight: 500; }
+
+    /* ─── DESIGN DECISIONS ──────────────────── */
+    .vv-dec {
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 12px;
+      transition: border-color 0.25s;
+    }
+    .vv-dec:hover { border-color: color-mix(in srgb, var(--accent-color), transparent 58%); }
+    .vv-dec-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .vv-dec-num {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--accent-color), transparent 85%);
+      color: var(--accent-color);
+      font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .vv-dec h4 { font-size: 14.5px; font-weight: 600; color: var(--heading-color); margin: 0; }
+    .vv-dec p { font-size: 13.5px; color: color-mix(in srgb, var(--default-color), transparent 26%); line-height: 1.66; margin: 0; padding-left: 34px; }
+
+    /* ─── STUDY SPEC CARD ───────────────────── */
+    .vv-spec {
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 76%);
+      border-radius: 14px;
+      padding: 26px 28px;
+      margin: 28px 0;
+    }
+    .vv-spec h4 {
+      font-size: 15px; font-weight: 700; color: var(--heading-color);
+      margin-bottom: 20px; padding-bottom: 14px;
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 82%);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .vv-spec-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .vv-spec-lbl {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent-color); margin-bottom: 4px;
+    }
+    .vv-spec-val { font-size: 13.5px; color: var(--heading-color); font-weight: 500; line-height: 1.45; }
+
+    /* ─── RESULT STATS ──────────────────────── */
+    .vv-res-stats {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 16px;
+      margin: 28px 0;
+    }
+    .vv-res-stat {
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.25s;
+    }
+    .vv-res-stat:hover { transform: translateY(-3px); }
+    .vv-res-num {
+      font-family: var(--heading-font);
+      font-size: 32px; font-weight: 700;
+      color: var(--accent-color);
+      line-height: 1; margin-bottom: 6px;
+    }
+    .vv-res-lbl { font-size: 12px; color: color-mix(in srgb, var(--default-color), transparent 30%); line-height: 1.4; }
+    .vv-res-sub { font-size: 11px; color: color-mix(in srgb, var(--default-color), transparent 46%); margin-top: 4px; }
+
+    /* ─── CHARTS ────────────────────────────── */
+    .vv-charts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 28px 0;
+    }
+    .vv-chart {
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .vv-chart img { width: 100%; display: block; }
+    .vv-chart-cap {
+      padding: 12px 16px;
+      font-size: 12.5px;
+      color: color-mix(in srgb, var(--default-color), transparent 30%);
+      border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      line-height: 1.5;
+    }
+    .vv-chart-cap strong { color: var(--heading-color); font-weight: 600; }
+
+    /* ─── QUALITATIVE THEMES ────────────────── */
+    .vv-theme {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 22px 0;
+      border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    }
+    .vv-theme:first-of-type { border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); }
+    .vv-theme-icon {
+      width: 38px; height: 38px;
+      background: color-mix(in srgb, var(--accent-color), transparent 88%);
+      color: var(--accent-color);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0; margin-top: 2px;
+    }
+    .vv-theme h4 { font-size: 15px; font-weight: 600; color: var(--heading-color); margin-bottom: 6px; }
+    .vv-theme p { font-size: 14px; color: color-mix(in srgb, var(--default-color), transparent 20%); line-height: 1.72; margin: 0; }
+    .vv-inline-quote { font-style: italic; font-size: 13px; color: color-mix(in srgb, var(--default-color), transparent 36%); display: block; margin-top: 8px; }
+
+    /* ─── PREFERENCE BARS ───────────────────── */
+    .vv-pref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 28px 0; }
+    .vv-pref {
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .vv-pref h5 { font-size: 13.5px; font-weight: 600; color: var(--heading-color); margin-bottom: 16px; }
+    .vv-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .vv-bar-lbl { font-size: 12px; color: color-mix(in srgb, var(--default-color), transparent 32%); width: 72px; flex-shrink: 0; }
+    .vv-bar-track { flex: 1; background: color-mix(in srgb, var(--default-color), transparent 90%); border-radius: 100px; height: 8px; overflow: hidden; }
+    .vv-bar-fill { height: 100%; border-radius: 100px; background: var(--accent-color); transition: width 1s ease; }
+    .vv-bar-fill.dim { background: color-mix(in srgb, var(--accent-color), transparent 58%); }
+    .vv-bar-fill.faint { background: color-mix(in srgb, var(--accent-color), transparent 72%); }
+    .vv-bar-n { font-size: 12px; font-weight: 600; color: var(--heading-color); width: 18px; text-align: right; }
+    .vv-pref-note { font-size: 12px; color: color-mix(in srgb, var(--default-color), transparent 42%); margin-top: 10px; margin-bottom: 0; }
+
+    /* ─── TAKEAWAYS ─────────────────────────── */
+    .vv-takeaway {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 24px 0;
+      border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    }
+    .vv-takeaway:first-of-type { border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); }
+    .vv-takeaway-icon {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      background: color-mix(in srgb, var(--accent-color), transparent 88%);
+      color: var(--accent-color);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px; flex-shrink: 0; margin-top: 2px;
+    }
+    .vv-takeaway h4 { font-size: 15px; font-weight: 600; color: var(--heading-color); margin-bottom: 5px; }
+    .vv-takeaway p { font-size: 14px; color: color-mix(in srgb, var(--default-color), transparent 20%); line-height: 1.72; margin: 0; }
+
+    /* ─── REFLECTION BOX ────────────────────── */
+    .vv-reflection {
+      background: color-mix(in srgb, var(--accent-color), transparent 92%);
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 74%);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin: 28px 0;
+    }
+    .vv-reflection h5 {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.13em;
+      text-transform: uppercase; color: var(--accent-color); margin-bottom: 10px;
+    }
+    .vv-reflection p { font-size: 14.5px; color: var(--default-color); line-height: 1.76; margin: 0; }
+
+    /* ─── FUTURE GRID ───────────────────────── */
+    .vv-future {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 12px;
+      margin: 24px 0;
+    }
+    .vv-future-item {
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .vv-future-item i { color: var(--accent-color); font-size: 15px; flex-shrink: 0; margin-top: 2px; }
+    .vv-future-item p { font-size: 13px; color: color-mix(in srgb, var(--default-color), transparent 22%); line-height: 1.6; margin: 0; }
+
+    /* ─── IMAGE ─────────────────────────────── */
+    .vv-img { border-radius: 12px; overflow: hidden; box-shadow: 0 16px 40px rgba(0,0,0,0.09); }
+    .vv-img img { width: 100%; display: block; }
+
+    /* ─── CTA ───────────────────────────────── */
+    .vv-cta {
+      background: var(--heading-color);
+      border-radius: 16px;
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin: 80px 0 40px;
+    }
+    .vv-cta h3 { font-family: var(--heading-font); font-size: 26px; color: #fff; margin-bottom: 4px; }
+    .vv-cta p { font-size: 14px; color: rgba(255,255,255,0.58); margin: 0; }
+    .vv-cta-btns { display: flex; gap: 12px; flex-shrink: 0; }
+    .vv-btn-primary {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--accent-color); color: #fff !important;
+      font-size: 14px; font-weight: 600;
+      padding: 11px 22px; border-radius: 10px;
+      text-decoration: none !important;
+      transition: all 0.25s;
+      white-space: nowrap;
+    }
+    .vv-btn-primary:hover { background: color-mix(in srgb, var(--accent-color), black 14%); transform: translateY(-2px); }
+    .vv-btn-ghost {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.09); color: rgba(255,255,255,0.85) !important;
+      font-size: 14px; font-weight: 500;
+      padding: 11px 22px; border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.18);
+      text-decoration: none !important;
+      transition: all 0.25s;
+      white-space: nowrap;
+    }
+    .vv-btn-ghost:hover { background: rgba(255,255,255,0.16); color: #fff !important; }
+
+    /* ─── RESPONSIVE ────────────────────────── */
+    @media (max-width: 992px) {
+      .vv-meta { grid-template-columns: repeat(2,1fr); }
+      .vv-meta-cell:nth-child(2) { border-right: none; }
+      .vv-meta-cell:nth-child(3),
+      .vv-meta-cell:nth-child(4) { border-top: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%); }
+      .vv-meta-cell:nth-child(4) { border-right: none; }
+      .vv-stat-row { grid-template-columns: repeat(2,1fr); }
+      .vv-overview-tabs { flex-wrap: nowrap; padding-bottom: 4px; }
+      .vv-overview-header,
+      .vv-overview-panels,
+      .vv-overview-stats { padding-left: 20px; padding-right: 20px; }
+      .vv-cards { grid-template-columns: 1fr; }
+      .vv-spec-grid { grid-template-columns: repeat(2,1fr); }
+      .vv-res-stats { grid-template-columns: repeat(2,1fr); }
+      .vv-charts { grid-template-columns: 1fr; }
+      .vv-pref-grid { grid-template-columns: 1fr; }
+      .vv-future { grid-template-columns: repeat(2,1fr); }
+      .vv-cta { flex-direction: column; padding: 28px 24px; }
+      .vv-cta-btns { flex-wrap: wrap; }
+      .vv-hero-text { padding: 20px 22px; }
+      .vv-page-nav { position: static; }
+    }
+    @media (max-width: 576px) {
+      .vv-future { grid-template-columns: 1fr; }
+      .vv-res-stats { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 
 <body class="portfolio-details-page">
 
-    <header id="header" class="header dark-background d-flex flex-column justify-content-center">
-        <i class="header-toggle d-xl-none bi bi-list"></i>
-
-        <div class="header-container d-flex flex-column align-items-start">
-            <nav id="navmenu" class="navmenu">
-                <ul>
-                    <li><a href="index.html#hero" class="active"><i class="bi bi-house navicon"></i>Home</a></li>
-                    <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
-                    <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Portfolio</a></li>
-                    <li><a href="index.html#services"><i class="bi bi-balloon-heart navicon"></i> Passion Projects</a>
-                    </li>
-                    <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-                </ul>
-            </nav>
-
+    <header id="header" class="header header-top">
+      <div class="header-container">
+        <a href="index.html" class="logo">KHUSHI<span class="logo-accent">.</span></a>
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#services">Passion Projects</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <button type="button" class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="bi bi-moon-stars"></i>
+          </button>
+          <button type="button" class="header-toggle d-lg-none" aria-label="Toggle navigation">
+            <i class="bi bi-list"></i>
+          </button>
         </div>
-
+      </div>
     </header>
 
     <main class="main">
@@ -83,7 +743,7 @@
                 <!-- Page Title -->
                 <div class="page-title light-background">
                     <div class="d-lg-flex justify-content-between align-items-center">
-                        <h1 class="mb-2 mb-lg-0">Augmented Reality Based Vital Sign Monitoring</h1>
+                        <h1 class="mb-2 mb-lg-0">VitalViz: Improving Accuracy of Vital Sign Monitoring in Augmented Reality</h1>
                     </div>
                     <div class="tool-text">
                         <span class="small-badge-text">
@@ -96,43 +756,218 @@
                             Unity, Hololens2
                         </span>
                         <span class="small-badge-text">
-                            User Study
+                            User Research
                         </span>
                     </div>
                 </div><!-- End Page Title -->
 
+                
                 <div class="row gy-4 project-meta col-lg-11">
                     <div class="col-md-3">
                         <div class="project-point-item" data-aos="fade-left" data-aos-delay="100">
-                            <h6><i class="bi bi-book project-point-icon"></i> COURSE</h6>
+                            <h6>CONTEXT</h6>
                             <p>Masters - Thesis</p>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="project-point-item" data-aos="fade-left" data-aos-delay="200">
-                            <h6><i class="bi bi-calendar-range project-point-icon"></i> TIMELINE </h6>
+                            <h6>TIMELINE </h6>
                             <p>September 2023 - Present</p>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="project-point-item" data-aos="fade-left" data-aos-delay="300">
-                            <h6><i class="bi bi-person-circle project-point-icon"></i> MY ROLE </h6>
+                            <h6>MY ROLE </h6>
                             <p>Creating the prototype and conducting user-study</p>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="project-point-item" data-aos="fade-left" data-aos-delay="400">
-                            <h6><i class="bi bi-arrow-right-circle project-point-icon"></i> FOR MORE DETAILS</h6>
+                            <h6>FOR MORE DETAILS</h6>
                             <a target="_blank" rel="noopener noreferrer"
-                                href="https://drive.google.com/file/d/1Hen6zwlDkS1aQ4eoG6kzqlk6P0nekRrT/view?usp=sharing"
+                                href="https://drive.google.com/file/d/1gBL9so_MR31MF-KwWo7nlrXmtTJbEpm5/view?usp=drive_link"
                                 class="btn btn-primary chrome-btn">View Full Report</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- ════ PROJECT OVERVIEW CARD ════ -->
+                <div class="vv-overview" id="vv-overview" data-aos="fade-up" data-aos-delay="120">
+                  <div class="vv-overview-header">
+                    <span class="vv-tl-chip">Executive Overview</span>
+                    <h3 class="vv-overview-heading">VitalViz at a glance</h3>
+                    <p class="vv-overview-hook">A quick scan for busy reviewers — tap a topic for concise bullets. The full case study lives below.</p>
+                  </div>
+
+                  <div class="vv-overview-tabs" role="tablist" aria-label="Project overview topics">
+                    <button type="button" class="vv-tab-btn active" role="tab" aria-selected="true" aria-controls="panel-context" data-tab="context" id="tab-context">
+                      <i class="bi bi-building"></i> Context
+                    </button>
+                    <button type="button" class="vv-tab-btn" role="tab" aria-selected="false" aria-controls="panel-problem" data-tab="problem" id="tab-problem">
+                      <i class="bi bi-exclamation-triangle"></i> Problem
+                    </button>
+                    <button type="button" class="vv-tab-btn" role="tab" aria-selected="false" aria-controls="panel-process" data-tab="process" id="tab-process">
+                      <i class="bi bi-signpost-split"></i> Process
+                    </button>
+                    <button type="button" class="vv-tab-btn" role="tab" aria-selected="false" aria-controls="panel-proposal" data-tab="proposal" id="tab-proposal">
+                      <i class="bi bi-lightbulb"></i> Proposal
+                    </button>
+                    <button type="button" class="vv-tab-btn" role="tab" aria-selected="false" aria-controls="panel-result" data-tab="result" id="tab-result">
+                      <i class="bi bi-graph-up-arrow"></i> Result
+                    </button>
+                  </div>
+
+                  <div class="vv-overview-panels">
+                    <div class="vv-overview-panel active" id="panel-context" role="tabpanel" aria-labelledby="tab-context">
+                      <ul class="vv-overview-list">
+                        <li><strong>M.Sc. thesis</strong> at McGill University (ECE), Shared Reality Lab — designing for high-stakes ICU and operating room environments.</li>
+                        <li>Clinical vital sign monitors are essential, but their <strong>alarm-heavy, screen-fixed</strong> design creates well-documented usability failures.</li>
+                        <li>Explored whether <strong>augmented reality</strong> could keep critical vitals perceptually available without adding more noise.</li>
+                        <li>Built and evaluated a <strong>HoloLens 2 prototype</strong> with a 20-participant, REB-approved controlled study.</li>
+                      </ul>
+                    </div>
+                    <div class="vv-overview-panel" id="panel-problem" role="tabpanel" aria-labelledby="tab-problem" hidden>
+                      <ul class="vv-overview-list">
+                        <li><strong>Alarm fatigue</strong> — clinicians face hundreds of alarms per shift; many are non-actionable, training staff to tune out the sounds that matter.</li>
+                        <li><strong>Monitors out of sight</strong> — during procedures, displays are often behind the clinician, forcing gaze shifts away from the patient.</li>
+                        <li><strong>Cognitive overload</strong> — reading waveforms and numbers under multitasking demands active interpretation (“I had to do some math to know if it was high or low”).</li>
+                        <li><strong>Environmental noise</strong> — auditory alarms add to ICU/OR sound levels that already exceed recommended limits.</li>
+                      </ul>
+                    </div>
+                    <div class="vv-overview-panel" id="panel-process" role="tabpanel" aria-labelledby="tab-process" hidden>
+                      <ul class="vv-overview-list">
+                        <li><strong>Field observation</strong> and interviews with anesthesiology and HCI experts to ground design in real clinical workflows.</li>
+                        <li><strong>Iterative ideation</strong> — sketching notification concepts that balance salience with low distraction in busy settings.</li>
+                        <li><strong>High-fidelity AR prototype</strong> in Unity for HoloLens 2, iterating on animation, color, and spatial placement.</li>
+                        <li><strong>Controlled user study</strong> — within-subjects design with a Fruit Ninja distractor task to simulate clinical multitasking.</li>
+                      </ul>
+                    </div>
+                    <div class="vv-overview-panel" id="panel-proposal" role="tabpanel" aria-labelledby="tab-proposal" hidden>
+                      <ul class="vv-overview-list">
+                        <li><strong>VitalViz</strong> — an AR vital sign display using three animated spheres for HR (green), BP (red), and SpO₂ (blue).</li>
+                        <li><strong>Visual-only alarms</strong> — urgency conveyed through size, color saturation, and motion — no additional audio noise.</li>
+                        <li><strong>Always in view</strong> — vitals anchored in the clinician’s field of vision via head-mounted display, regardless of position.</li>
+                        <li><strong>Intuitive encoding</strong> — e.g. a larger, brighter red sphere moving closer signals a high BP alarm without reading numbers.</li>
+                      </ul>
+                    </div>
+                    <div class="vv-overview-panel" id="panel-result" role="tabpanel" aria-labelledby="tab-result" hidden>
+                      <ul class="vv-overview-list">
+                        <li><strong>↑18% alarm detection accuracy</strong> with AR vs. a conventional monitor replica (0.98 vs. 0.80).</li>
+                        <li><strong>↑15% multitasking performance</strong> — higher distractor-task scores while monitoring vitals under AR.</li>
+                        <li><strong>Statistically significant</strong> improvement in alarm accuracy for both non-clinicians and nursing students (p &lt; .001).</li>
+                        <li><strong>No trade-off</strong> in vital trend interpretation — AR matched baseline performance on trend-reading tasks.</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="vv-overview-stats">
+                    <div class="vv-stat-row">
+                      <div class="vv-stat" data-aos="zoom-in" data-aos-delay="50">
+                        <div class="vv-stat-num">↑18%</div>
+                        <div class="vv-stat-lbl">Alarm detection<br><span class="vv-stat-sub">AR 0.98 vs. 0.80</span></div>
+                      </div>
+                      <div class="vv-stat" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="vv-stat-num">↑15%</div>
+                        <div class="vv-stat-lbl">Multitasking score<br><span class="vv-stat-sub">Higher under AR</span></div>
+                      </div>
+                      <div class="vv-stat" data-aos="zoom-in" data-aos-delay="150">
+                        <div class="vv-stat-num">20</div>
+                        <div class="vv-stat-lbl">Participants<br><span class="vv-stat-sub">2 groups · REB-approved</span></div>
+                      </div>
+                      <div class="vv-stat" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="vv-stat-num">p&lt;.001</div>
+                        <div class="vv-stat-lbl">Significance<br><span class="vv-stat-sub">Alarm accuracy</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <section id="case-study-overview" class="section">
+  <div class="container">
+
+    <div class="bento-grid">
+
+      <!-- CONTEXT — full width top -->
+      <div class="bento-tile tile-context">
+        <div class="tile-accent"></div>
+        <p class="tile-label"><i class="bi bi-geo-alt"></i> Context</p>
+        <h3 class="tile-title">Project Name — one-line tagline goes here</h3>
+        <div class="meta-chips">
+          <span class="meta-chip"><i class="bi bi-calendar3"></i> Month Year – Month Year</span>
+          <span class="meta-chip"><i class="bi bi-building"></i> Organisation / Course</span>
+          <span class="meta-chip"><i class="bi bi-people"></i> Solo · Team of N</span>
+          <span class="meta-chip"><i class="bi bi-tag"></i> UX Research · Dev</span>
+        </div>
+      </div>
+
+      <!-- ROLE -->
+      <div class="bento-tile tile-role">
+        <div class="tile-accent" style="background: var(--muted-accent)"></div>
+        <p class="tile-label"><i class="bi bi-person-check"></i> My role</p>
+        <ul class="role-list">
+          <li><span class="role-dot" style="background: var(--accent-color)"></span>UX Researcher</li>
+          <li><span class="role-dot" style="background: var(--muted-accent)"></span>Interaction Designer</li>
+          <li><span class="role-dot" style="background: #5DCAA5"></span>Developer</li>
+        </ul>
+      </div>
+
+      <!-- PROBLEM -->
+      <div class="bento-tile tile-problem">
+        <div class="tile-accent" style="background: #D85A30"></div>
+        <p class="tile-label"><i class="bi bi-exclamation-triangle"></i> Problem</p>
+        <h4 class="tile-subtitle">Who was struggling, with what, and why it mattered.</h4>
+        <p class="tile-body">Write 2–3 sentences. Name the user, the pain point, and the consequence. E.g. "ICU nurses were missing critical alarms due to sensory overload — a direct patient safety risk."</p>
+      </div>
+
+      <!-- PROCESS -->
+      <div class="bento-tile tile-process">
+        <div class="tile-accent" style="background: #1D9E75"></div>
+        <p class="tile-label"><i class="bi bi-diagram-3"></i> Process</p>
+        <ol class="process-steps">
+          <li><strong>Discover</strong> — method used (interviews, desk research, etc.)</li>
+          <li><strong>Define</strong> — key insight or HMW framing</li>
+          <li><strong>Ideate</strong> — sketches, lo-fi wireframes, concepts explored</li>
+          <li><strong>Build</strong> — what was developed and in what stack</li>
+          <li><strong>Test</strong> — evaluation method, who was tested, iterations made</li>
+        </ol>
+      </div>
+
+      <!-- PROPOSAL -->
+      <div class="bento-tile tile-proposal">
+        <div class="tile-accent"></div>
+        <p class="tile-label"><i class="bi bi-lightbulb"></i> Proposal</p>
+        <p class="tile-body">One sentence describing the solution clearly. What did you design or build, and for whom?</p>
+        <div class="proposal-tags">
+          <span class="proposal-tag tag-design">Key feature 1</span>
+          <span class="proposal-tag tag-design">Key feature 2</span>
+          <span class="proposal-tag tag-dev">Tech used</span>
+          <span class="proposal-tag tag-dev">Tech used</span>
+        </div>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="bento-tile tile-results">
+        <div class="tile-accent" style="background: #1D9E75"></div>
+        <p class="tile-label"><i class="bi bi-graph-up-arrow"></i> Results</p>
+        <div class="result-stats">
+          <div class="stat-block">
+            <span class="stat-num">00%</span>
+            <span class="stat-label">Metric label</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-num" style="color: var(--accent-color)">00+</span>
+            <span class="stat-label">Metric label</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
                 <div class="col-lg-11">
                     <div class="section-title" data-aos="fade-up">
-                        <h2>Overview</h2>
+                        <h2>In Depth</h2>
                         <div class="row">
                             <div class="col-lg-1"></div>
                             <div class="col-lg-10 test">
@@ -147,6 +982,8 @@
                             <div class="col-lg-1"></div>
 
                         </div>
+
+              
 
 
                     </div>
@@ -507,6 +1344,36 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+      // ── Overview tab interaction ─────────────────
+      (function () {
+        const tabBtns = document.querySelectorAll('.vv-tab-btn');
+        const panels = document.querySelectorAll('.vv-overview-panel');
+
+        tabBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            const target = btn.getAttribute('data-tab');
+
+            tabBtns.forEach(b => {
+              b.classList.toggle('active', b === btn);
+              b.setAttribute('aria-selected', b === btn ? 'true' : 'false');
+            });
+
+            panels.forEach(panel => {
+              const isActive = panel.id === 'panel-' + target;
+              panel.classList.toggle('active', isActive);
+              panel.hidden = !isActive;
+              if (isActive) {
+                panel.style.animation = 'none';
+                panel.offsetHeight;
+                panel.style.animation = '';
+              }
+            });
+          });
+        });
+      })();
+    </script>
 
 </body>
 

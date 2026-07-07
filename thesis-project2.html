@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <script src="assets/js/theme-init.js"></script>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>VitalViz | Khushi Naik</title>
+  <meta name="description" content="VitalViz — AR-based vital sign monitoring thesis project by Khushi Naik">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts — same as main portfolio -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS (keeps header, footer, typography, colors consistent) -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /*
+     * PAGE-LEVEL STYLES — VitalViz Case Study
+     * All variables reference existing main.css tokens:
+     *   --accent-color: #7F56D9   --background-color: #f6f3fb
+     *   --default-color: #444     --heading-color: #1A1A1A
+     *   --surface-color: #F9F7FB  --muted-accent: #BFA6E1
+     *   --contrast-color: #fff    --heading-font: Poppins
+     *   --default-font: Inter
+     */
+
+    /* ─── HERO ─────────────────────────────── */
+    .vv-hero {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 48px rgba(0,0,0,0.11);
+    }
+    .vv-hero img {
+      width: 100%;
+      max-height: 420px;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+    .vv-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 30%, rgba(16,8,36,0.75) 100%);
+    }
+    .vv-hero-text {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 28px 36px;
+    }
+    .vv-hero-text h1 {
+      font-family: var(--heading-font);
+      font-size: clamp(20px, 3vw, 36px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.25;
+      margin: 0;
+    }
+    .vv-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .vv-tag {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.92);
+      border: 1px solid rgba(255,255,255,0.26);
+      backdrop-filter: blur(6px);
+      letter-spacing: 0.03em;
+    }
+
+    /* ─── META STRIP ────────────────────────── */
+    .vv-meta {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 78%);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 24px 0 0;
+    }
+    .vv-meta-cell {
+      padding: 18px 22px;
+      border-right: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+    }
+    .vv-meta-cell:last-child { border-right: none; }
+    .vv-meta-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-bottom: 5px;
+    }
+    .vv-meta-value {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--heading-color);
+      line-height: 1.4;
+    }
+    .vv-report-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #fff !important;
+      background: var(--accent-color);
+      padding: 7px 15px;
+      border-radius: 8px;
+      text-decoration: none !important;
+      transition: all 0.25s;
+      margin-top: 2px;
+    }
+    .vv-report-btn:hover {
+      background: color-mix(in srgb, var(--accent-color), black 14%);
+      transform: translateY(-1px);
+    }
+
+    /* ─── STICKY PAGE NAV ───────────────────── */
+    .vv-page-nav {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin: 28px 0 0;
+      position: sticky;
+      top: 12px;
+      z-index: 50;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+    .vv-page-nav a {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: color-mix(in srgb, var(--default-color), transparent 35%);
+      padding: 6px 14px;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .vv-page-nav a:hover, .vv-page-nav a.active {
+      background: color-mix(in srgb, var(--accent-color), transparent 88%);
+      color: var(--accent-color);
+    }
+
+    /* ─── OVERVIEW CARD ─────────────────────── */
+    .vv-overview {
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 75%);
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 28px 0 0;
+    }
+    .vv-overview-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.2s;
+    }
+    .vv-overview-trigger:hover { background: color-mix(in srgb, var(--accent-color), transparent 94%); }
+    .vv-tl-chip {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: color-mix(in srgb, var(--accent-color), transparent 85%);
+      color: var(--accent-color);
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-right: 12px;
+    }
+    .vv-overview-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--heading-color);
+    }
+    .vv-chevron {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--accent-color), transparent 88%);
+      color: var(--accent-color);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .vv-overview-body {
+      border-top: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+      padding: 28px;
+    }
+    .vv-overview-body.collapsed { display: none; }
+    .vv-overview-summary {
+      font-size: 15px;
+      line-height: 1.82;
+      color: color-mix(in srgb, var(--default-color), transparent 12%);
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 82%);
+    }
+    .vv-overview-summary strong { font-weight: 600; color: var(--heading-color); }
+
+    .vv-stat-row {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .vv-stat {
+      background: color-mix(in srgb, var(--accent-color), transparent 91%);
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 78%);
+      border-radius: 12px;
+      padding: 16px 12px;
+      text-align: center;
+    }
+    .vv-stat-num {
+      font-family: var(--heading-font);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--accent-color);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .vv-stat-lbl {
+      font-size: 11.5px;
+      color: color-mix(in srgb, var(--default-color), transparent 32%);
+      line-height: 1.45;
+    }
+    .vv-process {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      padding-top: 20px;
+      border-top: 1px solid color-mix(in srgb, var(--accent-color), transparent 82%);
+    }
+    .vv-step {
+      font-size: 12px;
+      font-weight: 500;
+      color: color-mix(in srgb, var(--default-color), transparent 28%);
+      background: color-mix(in srgb, var(--default-color), transparent 91%);
+      padding: 5px 13px;
+      border-radius: 100px;
+    }
+    .vv-arrow { color: color-mix(in srgb, var(--default-color), transparent 60%); font-size: 13px; }
+
+    /* ─── SECTION WRAPPERS ──────────────────── */
+    .vv-section { padding-top: 80px; scroll-margin-top: 20px; }
+    .vv-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-bottom: 8px;
+    }
+    .vv-h2 {
+      font-family: var(--heading-font);
+      font-size: clamp(22px, 2.8vw, 32px);
+      font-weight: 700;
+      color: var(--heading-color);
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+    .vv-lead {
+      font-size: 16px;
+      color: color-mix(in srgb, var(--default-color), transparent 26%);
+      line-height: 1.82;
+      max-width: 700px;
+      margin-bottom: 36px;
+    }
+    .vv-divider {
+      border: none;
+      border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      margin: 80px 0 0;
+    }
+
+    /* ─── PROBLEM CARDS ─────────────────────── */
+    .vv-cards {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .vv-card {
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      border-radius: 14px;
+      padding: 22px;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .vv-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .vv-card-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px;
+      margin-bottom: 14px;
+    }
+    .vv-card h4 { font-size: 14.5px; font-weight: 600; color: var(--heading-color); margin-bottom: 8px; line-height: 1.35; }
+    .vv-card p { font-size: 13.5px; color: color-mix(in srgb, var(--default-color), transparent 26%); line-height: 1.66; margin: 0; }
+
+    /* ─── ANNOTATION ────────────────────────── */
+    .vv-note {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: color-mix(in srgb, var(--accent-color), transparent 90%);
+      border-left: 3px solid var(--accent-color);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      margin: 24px 0;
+    }
+    .vv-note > i { color: var(--accent-color); font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+    .vv-note p { font-size: 13.5px; color: var(--default-color); line-height: 1.65; margin: 0; }
+    .vv-note p strong { color: var(--heading-color); font-weight: 600; }
+
+    /* ─── FEATURE LIST ──────────────────────── */
+    .vv-feats { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+    .vv-feats li { display: flex; gap: 12px; align-items: flex-start; font-size: 14.5px; color: color-mix(in srgb, var(--default-color), transparent 16%); line-height: 1.65; }
+    .vv-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent-color); flex-shrink: 0; margin-top: 8px; }
+
+    /* ─── VIDEO ─────────────────────────────── */
+    .vv-vid {
+      border-radius: 12px;
+      overflow: hidden;
+      background: #111;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.13);
+    }
+    .vv-vid iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+    .vv-cap { font-size: 12px; color: color-mix(in srgb, var(--default-color), transparent 40%); text-align: center; margin-top: 8px; font-style: italic; }
+
+    /* ─── QUOTES ────────────────────────────── */
+    .vv-quote {
+      background: var(--surface-color);
+      border-left: 3px solid var(--accent-color);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin-bottom: 14px;
+    }
+    .vv-quote p { font-size: 15px; font-style: italic; color: var(--heading-color); line-height: 1.65; margin-bottom: 8px; }
+    .vv-quote span { font-size: 12px; color: color-mix(in srgb, var(--default-color), transparent 36%); font-weight: 500; }
+
+    /* ─── DESIGN DECISIONS ──────────────────── */
+    .vv-dec {
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin-bottom: 12px;
+      transition: border-color 0.25s;
+    }
+    .vv-dec:hover { border-color: color-mix(in srgb, var(--accent-color), transparent 58%); }
+    .vv-dec-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .vv-dec-num {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--accent-color), transparent 85%);
+      color: var(--accent-color);
+      font-size: 11px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .vv-dec h4 { font-size: 14.5px; font-weight: 600; color: var(--heading-color); margin: 0; }
+    .vv-dec p { font-size: 13.5px; color: color-mix(in srgb, var(--default-color), transparent 26%); line-height: 1.66; margin: 0; padding-left: 34px; }
+
+    /* ─── STUDY SPEC CARD ───────────────────── */
+    .vv-spec {
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 76%);
+      border-radius: 14px;
+      padding: 26px 28px;
+      margin: 28px 0;
+    }
+    .vv-spec h4 {
+      font-size: 15px; font-weight: 700; color: var(--heading-color);
+      margin-bottom: 20px; padding-bottom: 14px;
+      border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 82%);
+      display: flex; align-items: center; gap: 8px;
+    }
+    .vv-spec-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .vv-spec-lbl {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent-color); margin-bottom: 4px;
+    }
+    .vv-spec-val { font-size: 13.5px; color: var(--heading-color); font-weight: 500; line-height: 1.45; }
+
+    /* ─── RESULT STATS ──────────────────────── */
+    .vv-res-stats {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 16px;
+      margin: 28px 0;
+    }
+    .vv-res-stat {
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.25s;
+    }
+    .vv-res-stat:hover { transform: translateY(-3px); }
+    .vv-res-num {
+      font-family: var(--heading-font);
+      font-size: 32px; font-weight: 700;
+      color: var(--accent-color);
+      line-height: 1; margin-bottom: 6px;
+    }
+    .vv-res-lbl { font-size: 12px; color: color-mix(in srgb, var(--default-color), transparent 30%); line-height: 1.4; }
+    .vv-res-sub { font-size: 11px; color: color-mix(in srgb, var(--default-color), transparent 46%); margin-top: 4px; }
+
+    /* ─── CHARTS ────────────────────────────── */
+    .vv-charts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 28px 0;
+    }
+    .vv-chart {
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .vv-chart img { width: 100%; display: block; }
+    .vv-chart-cap {
+      padding: 12px 16px;
+      font-size: 12.5px;
+      color: color-mix(in srgb, var(--default-color), transparent 30%);
+      border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      line-height: 1.5;
+    }
+    .vv-chart-cap strong { color: var(--heading-color); font-weight: 600; }
+
+    /* ─── QUALITATIVE THEMES ────────────────── */
+    .vv-theme {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 22px 0;
+      border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    }
+    .vv-theme:first-of-type { border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); }
+    .vv-theme-icon {
+      width: 38px; height: 38px;
+      background: color-mix(in srgb, var(--accent-color), transparent 88%);
+      color: var(--accent-color);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0; margin-top: 2px;
+    }
+    .vv-theme h4 { font-size: 15px; font-weight: 600; color: var(--heading-color); margin-bottom: 6px; }
+    .vv-theme p { font-size: 14px; color: color-mix(in srgb, var(--default-color), transparent 20%); line-height: 1.72; margin: 0; }
+    .vv-inline-quote { font-style: italic; font-size: 13px; color: color-mix(in srgb, var(--default-color), transparent 36%); display: block; margin-top: 8px; }
+
+    /* ─── PREFERENCE BARS ───────────────────── */
+    .vv-pref-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 28px 0; }
+    .vv-pref {
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .vv-pref h5 { font-size: 13.5px; font-weight: 600; color: var(--heading-color); margin-bottom: 16px; }
+    .vv-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .vv-bar-lbl { font-size: 12px; color: color-mix(in srgb, var(--default-color), transparent 32%); width: 72px; flex-shrink: 0; }
+    .vv-bar-track { flex: 1; background: color-mix(in srgb, var(--default-color), transparent 90%); border-radius: 100px; height: 8px; overflow: hidden; }
+    .vv-bar-fill { height: 100%; border-radius: 100px; background: var(--accent-color); transition: width 1s ease; }
+    .vv-bar-fill.dim { background: color-mix(in srgb, var(--accent-color), transparent 58%); }
+    .vv-bar-fill.faint { background: color-mix(in srgb, var(--accent-color), transparent 72%); }
+    .vv-bar-n { font-size: 12px; font-weight: 600; color: var(--heading-color); width: 18px; text-align: right; }
+    .vv-pref-note { font-size: 12px; color: color-mix(in srgb, var(--default-color), transparent 42%); margin-top: 10px; margin-bottom: 0; }
+
+    /* ─── TAKEAWAYS ─────────────────────────── */
+    .vv-takeaway {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      padding: 24px 0;
+      border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    }
+    .vv-takeaway:first-of-type { border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); }
+    .vv-takeaway-icon {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      background: color-mix(in srgb, var(--accent-color), transparent 88%);
+      color: var(--accent-color);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px; flex-shrink: 0; margin-top: 2px;
+    }
+    .vv-takeaway h4 { font-size: 15px; font-weight: 600; color: var(--heading-color); margin-bottom: 5px; }
+    .vv-takeaway p { font-size: 14px; color: color-mix(in srgb, var(--default-color), transparent 20%); line-height: 1.72; margin: 0; }
+
+    /* ─── REFLECTION BOX ────────────────────── */
+    .vv-reflection {
+      background: color-mix(in srgb, var(--accent-color), transparent 92%);
+      border: 1px solid color-mix(in srgb, var(--accent-color), transparent 74%);
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin: 28px 0;
+    }
+    .vv-reflection h5 {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.13em;
+      text-transform: uppercase; color: var(--accent-color); margin-bottom: 10px;
+    }
+    .vv-reflection p { font-size: 14.5px; color: var(--default-color); line-height: 1.76; margin: 0; }
+
+    /* ─── FUTURE GRID ───────────────────────── */
+    .vv-future {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 12px;
+      margin: 24px 0;
+    }
+    .vv-future-item {
+      background: var(--surface-color);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 88%);
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .vv-future-item i { color: var(--accent-color); font-size: 15px; flex-shrink: 0; margin-top: 2px; }
+    .vv-future-item p { font-size: 13px; color: color-mix(in srgb, var(--default-color), transparent 22%); line-height: 1.6; margin: 0; }
+
+    /* ─── IMAGE ─────────────────────────────── */
+    .vv-img { border-radius: 12px; overflow: hidden; box-shadow: 0 16px 40px rgba(0,0,0,0.09); }
+    .vv-img img { width: 100%; display: block; }
+
+    /* ─── CTA ───────────────────────────────── */
+    .vv-cta {
+      background: var(--heading-color);
+      border-radius: 16px;
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin: 80px 0 40px;
+    }
+    .vv-cta h3 { font-family: var(--heading-font); font-size: 26px; color: #fff; margin-bottom: 4px; }
+    .vv-cta p { font-size: 14px; color: rgba(255,255,255,0.58); margin: 0; }
+    .vv-cta-btns { display: flex; gap: 12px; flex-shrink: 0; }
+    .vv-btn-primary {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--accent-color); color: #fff !important;
+      font-size: 14px; font-weight: 600;
+      padding: 11px 22px; border-radius: 10px;
+      text-decoration: none !important;
+      transition: all 0.25s;
+      white-space: nowrap;
+    }
+    .vv-btn-primary:hover { background: color-mix(in srgb, var(--accent-color), black 14%); transform: translateY(-2px); }
+    .vv-btn-ghost {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.09); color: rgba(255,255,255,0.85) !important;
+      font-size: 14px; font-weight: 500;
+      padding: 11px 22px; border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.18);
+      text-decoration: none !important;
+      transition: all 0.25s;
+      white-space: nowrap;
+    }
+    .vv-btn-ghost:hover { background: rgba(255,255,255,0.16); color: #fff !important; }
+
+    /* ─── RESPONSIVE ────────────────────────── */
+    @media (max-width: 992px) {
+      .vv-meta { grid-template-columns: repeat(2,1fr); }
+      .vv-meta-cell:nth-child(2) { border-right: none; }
+      .vv-meta-cell:nth-child(3),
+      .vv-meta-cell:nth-child(4) { border-top: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%); }
+      .vv-meta-cell:nth-child(4) { border-right: none; }
+      .vv-stat-row { grid-template-columns: repeat(2,1fr); }
+      .vv-cards { grid-template-columns: 1fr; }
+      .vv-spec-grid { grid-template-columns: repeat(2,1fr); }
+      .vv-res-stats { grid-template-columns: repeat(2,1fr); }
+      .vv-charts { grid-template-columns: 1fr; }
+      .vv-pref-grid { grid-template-columns: 1fr; }
+      .vv-future { grid-template-columns: repeat(2,1fr); }
+      .vv-cta { flex-direction: column; padding: 28px 24px; }
+      .vv-cta-btns { flex-wrap: wrap; }
+      .vv-hero-text { padding: 20px 22px; }
+      .vv-page-nav { position: static; }
+    }
+    @media (max-width: 576px) {
+      .vv-future { grid-template-columns: 1fr; }
+      .vv-res-stats { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body class="portfolio-details-page">
+
+  <!-- ══ PORTFOLIO SIDEBAR NAV (unchanged from original) ══ -->
+    <header id="header" class="header header-top">
+    <div class="header-container">
+      <a href="index.html" class="logo">KHUSHI<span class="logo-accent">.</span></a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#services">Passion Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" aria-label="Toggle dark mode">
+          <i class="bi bi-moon-stars"></i>
+        </button>
+        <button type="button" class="header-toggle d-lg-none" aria-label="Toggle navigation">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- ════ HERO ════ -->
+        <div class="vv-hero" data-aos="fade-up">
+          <img src="assets/img/portfolio/thesis-project/thesisheader.png" alt="VitalViz AR display on Microsoft HoloLens 2">
+          <div class="vv-hero-overlay"></div>
+          <div class="vv-hero-text">
+            <div class="vv-tags">
+              <span class="vv-tag">UX Design</span>
+              <span class="vv-tag">Augmented Reality</span>
+              <span class="vv-tag">Unity · HoloLens 2</span>
+              <span class="vv-tag">User Study · 20 Participants</span>
+              <span class="vv-tag">M.Sc. Thesis · McGill</span>
+            </div>
+            <h1>VitalViz: AR-Based Vital Sign Monitoring</h1>
+          </div>
+        </div>
+
+        <!-- ════ META STRIP ════ -->
+        <div class="vv-meta" data-aos="fade-up" data-aos-delay="80">
+          <div class="vv-meta-cell">
+            <p class="vv-meta-label">Context</p>
+            <p class="vv-meta-value">M.Sc. Thesis · McGill University, ECE</p>
+          </div>
+          <div class="vv-meta-cell">
+            <p class="vv-meta-label">Timeline</p>
+            <p class="vv-meta-value">September 2023 – April 2026</p>
+          </div>
+          <div class="vv-meta-cell">
+            <p class="vv-meta-label">My Role</p>
+            <p class="vv-meta-value">UX Design · AR Prototyping · Experiment Design · Statistical Analysis</p>
+          </div>
+          <div class="vv-meta-cell">
+            <p class="vv-meta-label">Full Report</p>
+            <p class="vv-meta-value">
+              <a class="vv-report-btn" href="https://drive.google.com/file/d/1Hen6zwlDkS1aQ4eoG6kzqlk6P0nekRrT/view?usp=sharing" target="_blank" rel="noopener">
+                <i class="bi bi-file-earmark-text"></i> View Thesis
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <!-- ════ PAGE NAV ════ -->
+        <nav class="vv-page-nav" id="vvNav" data-aos="fade-up" data-aos-delay="100">
+          <a href="#vv-overview" class="active">Overview</a>
+          <a href="#vv-problem">Problem</a>
+          <a href="#vv-solution">Design Solution</a>
+          <a href="#vv-research">Research & Ideation</a>
+          <a href="#vv-evaluation">Evaluation</a>
+          <a href="#vv-reflections">Reflections</a>
+        </nav>
+
+        <!-- ════ TL;DR CARD ════ -->
+        <div class="vv-overview" id="vv-overview" data-aos="fade-up" data-aos-delay="120">
+          <div class="vv-overview-trigger" id="vvTrigger">
+            <div style="display:flex;align-items:center;">
+              <span class="vv-tl-chip">TL;DR</span>
+              <span class="vv-overview-title">Project at a glance — click to expand</span>
+            </div>
+            <div class="vv-chevron" id="vvChevron"><i class="bi bi-chevron-up"></i></div>
+          </div>
+          <div class="vv-overview-body" id="vvBody">
+            <p class="vv-overview-summary">
+              ICUs and operating rooms are saturated with auditory alarms that clinicians increasingly tune out — a well-documented phenomenon called <strong>alarm fatigue</strong>. At the same time, the monitors triggering those alarms are almost never where a clinician is looking. I designed and evaluated <strong>VitalViz</strong>, an AR-based vital sign display for Microsoft HoloLens 2 that replaces traditional audio alarms and waveform traces with animated, color-coded 3D spheres — always visible in the clinician's field of view, regardless of where they look or stand. A two-phase controlled user study with <strong>20 participants</strong> (11 non-clinicians + 9 nursing students) demonstrated that VitalViz significantly improved alarm detection accuracy and multitasking performance compared to a conventional monitor replica, with no trade-off in trend interpretation.
+            </p>
+            <div class="vv-stat-row">
+              <div class="vv-stat">
+                <div class="vv-stat-num">↑18%</div>
+                <div class="vv-stat-lbl">Alarm detection accuracy<br><span style="font-size:10.5px;opacity:0.75;">AR 0.98 vs. baseline 0.80</span></div>
+              </div>
+              <div class="vv-stat">
+                <div class="vv-stat-num">↑15%</div>
+                <div class="vv-stat-lbl">Multitasking performance<br><span style="font-size:10.5px;opacity:0.75;">Higher game scores under AR</span></div>
+              </div>
+              <div class="vv-stat">
+                <div class="vv-stat-num">20</div>
+                <div class="vv-stat-lbl">Study participants<br><span style="font-size:10.5px;opacity:0.75;">2 groups · REB-approved</span></div>
+              </div>
+              <div class="vv-stat">
+                <div class="vv-stat-num">p&lt;.001</div>
+                <div class="vv-stat-lbl">Statistical significance<br><span style="font-size:10.5px;opacity:0.75;">Alarm accuracy, both groups</span></div>
+              </div>
+            </div>
+            <div class="vv-process">
+              <span class="vv-step">Field Observation</span>
+              <span class="vv-arrow">›</span>
+              <span class="vv-step">Expert Consultation</span>
+              <span class="vv-arrow">›</span>
+              <span class="vv-step">Iterative Prototyping</span>
+              <span class="vv-arrow">›</span>
+              <span class="vv-step">AR Prototype (HoloLens 2)</span>
+              <span class="vv-arrow">›</span>
+              <span class="vv-step">Controlled User Study</span>
+              <span class="vv-arrow">›</span>
+              <span class="vv-step">Statistical Analysis</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════
+             SECTION 1 — PROBLEM SPACE
+        ════════════════════════════════════ -->
+        <hr class="vv-divider">
+        <div class="vv-section" id="vv-problem" data-aos="fade-up">
+          <p class="vv-eyebrow">Problem Space</p>
+          <h2 class="vv-h2">Clinicians are losing the battle against alarm noise</h2>
+          <p class="vv-lead">Vital sign monitors are indispensable in critical care — but the way they communicate urgency is broken. In a typical ICU, a clinician may face up to <strong>1,000 alarms in a single shift</strong>. Most are non-actionable. The result is alarm fatigue: a progressive desensitisation that makes it harder to catch the alarms that truly matter.</p>
+
+          <div class="row gy-4 align-items-center" data-aos="fade-up" data-aos-delay="60">
+            <div class="col-lg-5">
+              <div class="vv-img">
+                <img src="assets/img/portfolio/thesis-project/conventionalMonitor.jpg" alt="Conventional ICU vital sign monitor">
+              </div>
+              <p class="vv-cap">A conventional bedside vital sign monitor showing numerical values and waveform traces.</p>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-6">
+              <p class="test">Conventional monitors present physiological data — Heart Rate, Blood Pressure, and Oxygen Saturation — as color-coded numerical values paired with continuous waveform traces, with urgency communicated through flashing lights and auditory tones.</p>
+              <p class="test">The problem is that <strong>clinicians are rarely where their monitor is</strong>. Research shows 30% of visual attention during critical incidents goes to these displays — time spent turning away from the patient to seek out a screen that is often not even in their line of sight.</p>
+              <div class="vv-note">
+                <i class="bi bi-info-circle-fill"></i>
+                <p>In OR settings, the anesthesia machine and its monitor are often positioned <strong>directly behind</strong> the clinician during procedures — completely outside the natural line of sight when it matters most.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="vv-cards" data-aos="fade-up" data-aos-delay="80">
+            <div class="vv-card">
+              <div class="vv-card-icon" style="background:#FEF2F2;color:#DC2626;"><i class="bi bi-bell-slash"></i></div>
+              <h4>Alarm Fatigue & Noise Overload</h4>
+              <p>ICUs and ORs already exceed WHO's recommended noise limit of 35 dB. Heavy reliance on audio alarms compounds this — overwhelming clinicians, disrupting patient recovery, and training staff to ignore sounds that once demanded attention.</p>
+            </div>
+            <div class="vv-card">
+              <div class="vv-card-icon" style="background:#FFFBEB;color:#D97706;"><i class="bi bi-eye-slash"></i></div>
+              <h4>Limited Visibility & Accessibility</h4>
+              <p>Monitors are fixed to bedsides. Clinicians must physically redirect their gaze — and often their entire posture — to check a value. This constant context-switching fragments attention at the moments it matters most.</p>
+            </div>
+            <div class="vv-card">
+              <div class="vv-card-icon" style="background:color-mix(in srgb, var(--accent-color), transparent 88%);color:var(--accent-color);"><i class="bi bi-cpu"></i></div>
+              <h4>High Cognitive Interpretation Load</h4>
+              <p>Reading waveforms and numbers requires active mental effort: read the value, recall the normal range, compare, decide. Under high workload, this burden compounds. One participant said plainly: <em>"I had to do some math to know if it was high or low."</em></p>
+            </div>
+          </div>
+
+          <div class="row gy-4 align-items-center mt-2" data-aos="fade-up" data-aos-delay="60">
+            <div class="col-lg-5">
+              <div class="vv-img">
+                <img src="assets/img/portfolio/thesis-project/thesisproblem.jpg" alt="Clinician turns away from patient to view side-mounted monitor">
+              </div>
+              <p class="vv-cap">A clinician forced to divert attention from the patient to consult a side-mounted monitor — a routine occurrence that fragments situational awareness.</p>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-6">
+              <p class="test">Prior AR-based vital sign monitoring research existed, but all surveyed systems largely preserved traditional representations — numeric values, waveform traces, audio alarms — simply ported into an HMD. No existing system had fully departed from the conventional format to explore whether <strong>alternative visual encodings alone</strong> could maintain clinician awareness.</p>
+              <div class="vv-note">
+                <i class="bi bi-lightbulb-fill"></i>
+                <p><strong>VitalViz was designed to answer that question directly</strong> — and to demonstrate that awareness of vital sign states can be maintained through visual cues alone, without relying on sound.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════
+             SECTION 2 — DESIGN SOLUTION
+        ════════════════════════════════════ -->
+        <hr class="vv-divider">
+        <div class="vv-section" id="vv-solution" data-aos="fade-up">
+          <p class="vv-eyebrow">Design Solution</p>
+          <h2 class="vv-h2">Vitals that follow you — not the other way around</h2>
+          <p class="vv-lead">VitalViz places vital sign information permanently in the clinician's field of view through a wireless Head-Mounted Display. No audio alarms. No waveforms to decode. Just three animated 3D spheres whose visual behaviour at any moment tells the complete story of a patient's state.</p>
+
+          <div class="row gy-4 align-items-center" data-aos="fade-up" data-aos-delay="60">
+            <div class="col-lg-6">
+              <div class="vv-vid">
+                <iframe src="https://www.youtube.com/embed/4H8sXCUPhn0?si=2hJQDtqT8DWKC0Lj" title="VitalViz prototype demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <p class="vv-cap">VitalViz prototype — vital spheres responding to simulated alarm states across normal, low alarm, high alarm, and return-to-normal conditions.</p>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5">
+              <ul class="vv-feats">
+                <li><span class="vv-dot"></span>Three color-coded 3D spheres represent HR (green), BP (red), and SpO₂ (blue) — following established clinical color conventions</li>
+                <li><span class="vv-dot"></span>Field-of-view anchoring — display is always visible regardless of where the clinician looks or stands</li>
+                <li><span class="vv-dot"></span>Visual-only alarm encoding eliminates audio entirely — addressing alarm fatigue at the source</li>
+                <li><span class="vv-dot"></span>Wireless HoloLens 2 removes cables and fixed co-location constraints; hands-free via gaze-dwell interaction</li>
+                <li><span class="vv-dot"></span>Gaze-triggered numerical values appear on 2-second dwell — minimal by default, precise on demand</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="vv-note mt-4" data-aos="fade-up">
+            <i class="bi bi-lightbulb-fill"></i>
+            <p>The human visual system is better at detecting <strong>shapes, colours, and movement</strong> than at reading numbers. VitalViz encodes alarm state through three simultaneous, redundant visual channels — ensuring the alarm registers even under high cognitive load or divided attention.</p>
+          </div>
+
+          <div class="mt-4" data-aos="fade-up" data-aos-delay="60">
+            <div class="vv-img">
+              <img src="assets/img/portfolio/thesis-project/animation2.png" alt="State encoding diagram — sphere size, colour saturation, and Z-axis movement per vital sign state">
+            </div>
+            <p class="vv-cap">State encoding diagram — how colour saturation, size, and Z-axis movement combine to represent normal, high alarm, low alarm, static, and returning-to-normal states for each vital sign.</p>
+          </div>
+
+          <h3 class="plan-item h3 mt-5">Design Decisions</h3>
+          <p class="test mb-4">Every major design choice was tested in iterative consultations with a practicing anesthesiologist and validated against HCI literature. None were arbitrary.</p>
+
+          <div data-aos="fade-up">
+            <div class="vv-dec">
+              <div class="vv-dec-head">
+                <span class="vv-dec-num">1</span>
+                <h4>Why 3D spheres, not flat 2D indicators?</h4>
+              </div>
+              <p>An early prototype used in-place flashing 2D circles. During review, the anesthesiologist noted this didn't leverage AR's defining capability: depth. Replacing circles with spheres — which look volumetrically consistent from any viewing angle — allowed Z-axis movement to encode alarm direction meaningfully. A sphere growing and moving toward you maps intuitively to a rising value; one shrinking and receding maps to a falling one.</p>
+            </div>
+            <div class="vv-dec">
+              <div class="vv-dec-head">
+                <span class="vv-dec-num">2</span>
+                <h4>Why visual-only, with no audio backup?</h4>
+              </div>
+              <p>Existing AR systems retained audio because the assumption was that visual-only cues couldn't adequately command attention. We challenged this directly — designing sphere animations to be salient enough to replace audio entirely, then testing that hypothesis with a controlled user study. The approach also addresses a secondary problem: reducing noise burden on both clinicians and patients.</p>
+            </div>
+            <div class="vv-dec">
+              <div class="vv-dec-head">
+                <span class="vv-dec-num">3</span>
+                <h4>Why redundant encoding across three channels?</h4>
+              </div>
+              <p>Colour saturation alone creates accessibility issues for colour-blind users and is harder to parse in peripheral vision under high cognitive load. Layering size, saturation, and Z-axis motion means any single channel can be missed — all three together cannot. Redundancy is deliberate design, not over-engineering.</p>
+            </div>
+            <div class="vv-dec">
+              <div class="vv-dec-head">
+                <span class="vv-dec-num">4</span>
+                <h4>Why gaze-dwell interaction, not voice or touch?</h4>
+              </div>
+              <p>Clinical environments are already noisy — voice commands create interference and privacy concerns. Touch requires clean, sterile hands. Gaze-dwell keeps hands completely free and adds no auditory burden. Voice control was specifically avoided based on HCI research guidance on noise in medical environments.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════
+             SECTION 3 — RESEARCH & IDEATION
+        ════════════════════════════════════ -->
+        <hr class="vv-divider">
+        <div class="vv-section" id="vv-research" data-aos="fade-up">
+          <p class="vv-eyebrow">Research & Ideation</p>
+          <h2 class="vv-h2">Designing from inside the clinical problem</h2>
+          <p class="vv-lead">Understanding what actually fails about conventional monitoring required going beyond the literature. VitalViz's design was shaped through iterative consultations with a practicing anesthesiologist — grounding every decision in real clinical workflow constraints.</p>
+
+          <h3 class="plan-item h3" style="margin-top:0;">Expert Consultation & Field Observations</h3>
+
+          <div class="row gy-4 align-items-center" data-aos="fade-up" data-aos-delay="60">
+            <div class="col-lg-5">
+              <div class="vv-quote">
+                <p>"I might be out of the ICU, and don't have access to auditory alarms…"</p>
+                <span>Anesthesiologist — clinical collaborator, 12+ years experience</span>
+              </div>
+              <div class="vv-quote">
+                <p>"The anesthesia machine (with the patient monitor) is behind them and usually to the right."</p>
+                <span>Field observation from clinical consultation</span>
+              </div>
+              <div class="vv-quote">
+                <p>"It's really simple… the shape and the color, it just tells me what I need to know."</p>
+                <span>PN04 — Nursing participant, post-study interview</span>
+              </div>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-6">
+              <p class="test">Throughout the design process, I worked closely with Dr. Joseph Schlesinger, an anesthesiologist, whose firsthand perspective surfaced constraints that would never have emerged from desk research alone.</p>
+              <p class="test">These conversations directly shaped two core decisions: using a wireless, head-worn display (eliminating fixed-placement constraints), and eliminating audio alarms entirely (addressing the noise burden that persists even when clinicians leave the monitored space).</p>
+              <p class="test">Continuous feedback was also received from Prof. Jeremy Cooperstock (HCI) to validate interaction design against usability standards beyond clinical relevance.</p>
+            </div>
+          </div>
+
+          <h3 class="plan-item h3">Ideation — Getting to the Sphere</h3>
+          <p class="test mb-4">The core challenge was creating alarm indicators salient enough to command attention without becoming a new source of distraction. I explored multiple directions before converging on animated 3D spheres.</p>
+
+          <div class="vv-img mb-3" data-aos="fade-up">
+            <img src="assets/img/portfolio/thesis-project/sketches.png" alt="Early ideation sketches — HUD layouts, icon indicators, spatial anchor configurations">
+          </div>
+          <p class="vv-cap mb-5">Early ideation sketches — exploring HUD-style overlays, icon-based indicators, and spatial anchor configurations before committing to the sphere encoding.</p>
+
+          <div class="row gy-4 align-items-center" data-aos="fade-up" data-aos-delay="60">
+            <div class="col-lg-6">
+              <div class="vv-vid">
+                <iframe src="https://www.youtube.com/embed/Ezz5-ly1OQQ?si=gIXCBGrjdeCP4LZ4" title="Vital sphere animation demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <p class="vv-cap">A vital sphere animating through its state transitions — normal → high alarm → static → returning to normal.</p>
+            </div>
+            <div class="col-lg-1"></div>
+            <div class="col-lg-5">
+              <p class="test">Initial prototypes used flat, in-place flashing 2D circles. These were reviewed with the anesthesiologist and rejected — the flat format failed to leverage AR's depth dimension, and the motion felt arbitrary rather than meaningful.</p>
+              <p class="test">Switching to 3D spheres with Z-axis movement created a display language that maps directly to clinical intuition: something growing and moving toward you signals a rising, dangerous value. Something shrinking and receding signals a value dangerously falling.</p>
+              <p class="test">Changes in <strong>size, colour saturation, and motion</strong> signal alarms — for example, a larger, brighter red BP sphere moving toward the viewer encodes a high alarm (e.g., 150/90 vs. normal 125/70) without any numbers needing to be read.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════
+             SECTION 4 — EVALUATION
+        ════════════════════════════════════ -->
+        <hr class="vv-divider">
+        <div class="vv-section" id="vv-evaluation" data-aos="fade-up">
+          <p class="vv-eyebrow">Evaluation & Findings</p>
+          <h2 class="vv-h2">A rigorous test under real cognitive pressure</h2>
+          <p class="vv-lead">Designing a more salient display is one thing. Proving it works under the divided-attention conditions that define clinical work is another. We conducted a two-phase, within-subjects user study comparing VitalViz against a replica conventional monitor — deliberately structured to stress both conditions equally.</p>
+
+          <!-- Headline stats -->
+          <div class="vv-res-stats" data-aos="fade-up" data-aos-delay="60">
+            <div class="vv-res-stat">
+              <div class="vv-res-num">0.98</div>
+              <div class="vv-res-lbl">AR alarm accuracy<br>(non-clinicians)</div>
+              <div class="vv-res-sub">vs. 0.80 baseline · p &lt; 0.001</div>
+            </div>
+            <div class="vv-res-stat">
+              <div class="vv-res-num">0.92</div>
+              <div class="vv-res-lbl">AR alarm accuracy<br>(nursing group)</div>
+              <div class="vv-res-sub">vs. 0.81 baseline · p = 0.0006</div>
+            </div>
+            <div class="vv-res-stat">
+              <div class="vv-res-num">↑15%</div>
+              <div class="vv-res-lbl">Game score improvement<br>under AR</div>
+              <div class="vv-res-sub">137.8 vs. 120.3 · p &lt; 0.001</div>
+            </div>
+          </div>
+
+          <!-- Study spec -->
+          <div class="vv-spec" data-aos="fade-up">
+            <h4><i class="bi bi-clipboard2-data" style="color:var(--accent-color);"></i> Study Design</h4>
+            <div class="vv-spec-grid">
+              <div>
+                <p class="vv-spec-lbl">Design</p>
+                <p class="vv-spec-val">Within-subjects, counterbalanced order</p>
+              </div>
+              <div>
+                <p class="vv-spec-lbl">Participants</p>
+                <p class="vv-spec-val">20 total: 11 non-clinicians (Phase 1) + 9 nursing students (Phase 2)</p>
+              </div>
+              <div>
+                <p class="vv-spec-lbl">Duration per session</p>
+                <p class="vv-spec-val">2 conditions × 2 blocks × ~7 min each</p>
+              </div>
+              <div>
+                <p class="vv-spec-lbl">Alarms</p>
+                <p class="vv-spec-val">28 primary + 3 secondary patient alarms per condition</p>
+              </div>
+              <div>
+                <p class="vv-spec-lbl">Distractor Task</p>
+                <p class="vv-spec-val">Modified Fruit Ninja — go/no-go visual task simulating divided attention</p>
+              </div>
+              <div>
+                <p class="vv-spec-lbl">Ethics</p>
+                <p class="vv-spec-val">REB-approved · McGill University #24-03-061</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="vv-note" data-aos="fade-up">
+            <i class="bi bi-controller"></i>
+            <p><strong>Why Fruit Ninja?</strong> The game's go/no-go structure requires rapid decision-making under time constraints and holds participants accountable for performance — mirroring how clinicians divide attention between patients and concurrent care tasks. The setup was deliberately biased <em>toward</em> the baseline condition (conventional monitor placed in peripheral vision) to make any AR advantage more meaningful.</p>
+          </div>
+
+          <!-- Charts -->
+          <div class="vv-charts" data-aos="fade-up" data-aos-delay="60">
+            <div class="vv-chart">
+              <img src="assets/img/portfolio/thesis-project/alarm-accuracy-p1-combined.png" alt="Alarm identification accuracy — AR vs. baseline, both groups">
+              <div class="vv-chart-cap"><strong>Alarm detection accuracy.</strong> AR significantly outperformed the conventional monitor for the primary patient in both groups (p &lt; 0.001 and p = 0.0006). The advantage was strongest for non-clinicians (0.98 vs. 0.80), who had no prior familiarity with clinical alarm systems.</div>
+            </div>
+            <div class="vv-chart">
+              <img src="assets/img/portfolio/thesis-project/fn-scores-combined.png" alt="Fruit Ninja game scores — dual-task performance comparison">
+              <div class="vv-chart-cap"><strong>Dual-task (multitasking) performance.</strong> Participants scored significantly higher in Fruit Ninja while using VitalViz — indicating the AR display reduced cognitive monitoring burden and freed attentional resources for concurrent tasks, rather than consuming them.</div>
+            </div>
+          </div>
+
+          <!-- Qualitative themes -->
+          <h3 class="plan-item h3">Qualitative Findings</h3>
+          <p class="test mb-4">Post-study interviews were transcribed and analysed via thematic analysis. Four themes emerged consistently across both participant groups.</p>
+
+          <div data-aos="fade-up">
+            <div class="vv-theme">
+              <div class="vv-theme-icon"><i class="bi bi-eye"></i></div>
+              <div>
+                <h4>Visual encoding reduces cognitive effort</h4>
+                <p>Most non-clinician participants found the sphere animations self-explanatory — identifying alarm states without consulting the reference sheet or performing mental arithmetic. Nursing participants similarly appreciated the directness of the encoding even when already familiar with traditional displays.
+                <span class="vv-inline-quote">"It's very salient… I didn't have to pay much attention to the values." — P04 &nbsp;·&nbsp; "Really easy to see when there was a change because it was yelling at you." — PN03</span></p>
+              </div>
+            </div>
+            <div class="vv-theme">
+              <div class="vv-theme-icon"><i class="bi bi-123"></i></div>
+              <div>
+                <h4>Clinicians want continuous numerical values</h4>
+                <p>The gaze-triggered numeric display was appreciated by some for its minimalism, but most — especially nursing participants — wanted numbers always visible. Seven of nine nursing participants supported always-on numerical values. One suggested a middle ground: numbers appearing automatically during alarms rather than requiring intentional gaze dwell.
+                <span class="vv-inline-quote">"I would like to obviously have the numbers just so that if ever I need to look at it." — PN04</span></p>
+              </div>
+            </div>
+            <div class="vv-theme">
+              <div class="vv-theme-icon"><i class="bi bi-person-check"></i></div>
+              <div>
+                <h4>Central placement reduces physical strain</h4>
+                <p>Participants consistently noted that having the display in their central field of view reduced physical effort and neck strain — eliminating the constant head-turning required by the peripheral conventional monitor.
+                <span class="vv-inline-quote">"I was breaking my neck trying to keep my eyes on the traditional monitor… I think I got a crank in my neck." — P11</span></p>
+              </div>
+            </div>
+            <div class="vv-theme">
+              <div class="vv-theme-icon"><i class="bi bi-exclamation-triangle"></i></div>
+              <div>
+                <h4>Hardware and anchoring limitations remain</h4>
+                <p>The most common design concern was that the AR display — anchored to a fixed QR marker — disappeared when participants looked down or turned their heads too far. Sphere colour contrast was also reported as insufficient by some, particularly for the secondary patient. HMD weight, hygiene, and patient-trust concerns were raised by nursing participants.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Preference bars -->
+          <h3 class="plan-item h3">User Preference</h3>
+          <div class="vv-pref-grid" data-aos="fade-up">
+            <div class="vv-pref">
+              <h5>Non-clinician group (n = 11)</h5>
+              <div class="vv-bar-row">
+                <span class="vv-bar-lbl">Prefer AR</span>
+                <div class="vv-bar-track"><div class="vv-bar-fill" style="width:64%;"></div></div>
+                <span class="vv-bar-n">7</span>
+              </div>
+              <div class="vv-bar-row">
+                <span class="vv-bar-lbl">Prefer baseline</span>
+                <div class="vv-bar-track"><div class="vv-bar-fill dim" style="width:27%;"></div></div>
+                <span class="vv-bar-n">3</span>
+              </div>
+              <div class="vv-bar-row">
+                <span class="vv-bar-lbl">Undecided</span>
+                <div class="vv-bar-track"><div class="vv-bar-fill faint" style="width:9%;"></div></div>
+                <span class="vv-bar-n">1</span>
+              </div>
+              <p class="vv-pref-note">AR preferred for salient visual alarms and lower interpretation effort. Those preferring baseline cited headset discomfort.</p>
+            </div>
+            <div class="vv-pref">
+              <h5>Nursing group (n = 9)</h5>
+              <div class="vv-bar-row">
+                <span class="vv-bar-lbl">Prefer AR</span>
+                <div class="vv-bar-track"><div class="vv-bar-fill" style="width:22%;"></div></div>
+                <span class="vv-bar-n">2</span>
+              </div>
+              <div class="vv-bar-row">
+                <span class="vv-bar-lbl">Prefer baseline</span>
+                <div class="vv-bar-track"><div class="vv-bar-fill dim" style="width:44%;"></div></div>
+                <span class="vv-bar-n">4</span>
+              </div>
+              <div class="vv-bar-row">
+                <span class="vv-bar-lbl">AR + numbers</span>
+                <div class="vv-bar-track"><div class="vv-bar-fill faint" style="width:33%;"></div></div>
+                <span class="vv-bar-n">3</span>
+              </div>
+              <p class="vv-pref-note">Baseline preferred for always-visible numbers matching existing clinical workflow — but 3 of 9 wanted AR encoding <em>with</em> continuous numerical values.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════
+             SECTION 5 — REFLECTIONS
+        ════════════════════════════════════ -->
+        <hr class="vv-divider">
+        <div class="vv-section" id="vv-reflections" data-aos="fade-up">
+          <p class="vv-eyebrow">Reflections</p>
+          <h2 class="vv-h2">What I learned — and what I'd do differently</h2>
+
+          <div data-aos="fade-up">
+            <div class="vv-takeaway">
+              <div class="vv-takeaway-icon"><i class="bi bi-people"></i></div>
+              <div>
+                <h4>Domain expert access is irreplaceable</h4>
+                <p>Iterative consultations with the anesthesiologist shaped every major design decision — from abandoning 2D indicators for 3D spheres, to eliminating audio entirely, to choosing gaze-dwell over voice input. No amount of literature review would have surfaced these constraints as precisely or quickly. For healthcare UX especially, proximity to the actual clinical environment is not optional.</p>
+              </div>
+            </div>
+            <div class="vv-takeaway">
+              <div class="vv-takeaway-icon"><i class="bi bi-headset-vr"></i></div>
+              <div>
+                <h4>Designing for emerging platforms means reasoning from first principles</h4>
+                <p>AR doesn't have an established interaction playbook the way web or mobile design does. Every decision — how to anchor content, handle depth, balance visual presence with peripheral awareness — required reasoning from perceptual psychology and cognitive science rather than pattern libraries. This made the work harder and more interesting in equal measure.</p>
+              </div>
+            </div>
+            <div class="vv-takeaway">
+              <div class="vv-takeaway-icon"><i class="bi bi-clipboard-check"></i></div>
+              <div>
+                <h4>Study design is as critical as interface design</h4>
+                <p>The validity of a user study lives entirely in the quality of its setup. Getting the distractor task calibrated, controlling for learning effects through counterbalancing, replicating realistic monitor placement, and selecting appropriate statistical models (GLME rather than simple ANOVA, to account for block ordering) required as much rigorous thought as the prototype itself.</p>
+              </div>
+            </div>
+            <div class="vv-takeaway">
+              <div class="vv-takeaway-icon"><i class="bi bi-stars"></i></div>
+              <div>
+                <h4>Performance and preference don't always align — and that's the most important finding</h4>
+                <p>The nursing group's clear preference for always-visible numerical values — despite performing significantly better with AR — was the study's most instructive result. It reveals a gap between objective performance and subjective trust with direct implications for clinical adoption. Designing a system that works better isn't enough if intended users don't feel confident using it. Familiarity, professional norms, and perceived risk are as real as latency and accuracy.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="vv-reflection mt-2" data-aos="fade-up">
+            <h5>What I'd do differently</h5>
+            <p>The Fruit Ninja distractor task served its methodological purpose well, but doesn't fully replicate the <em>procedural</em> cognitive load of real clinical work — where clinicians perform hands-on tasks while simultaneously monitoring patients. Future studies would use a more ecologically valid dual task, such as a simulated clinical procedure. I'd also expand the participant pool to include practicing anesthesiologists and OR nurses in their actual environments, and replace QR-code anchoring with marker-free patient recognition to support natural, unrestricted head movement.</p>
+          </div>
+
+          <h3 class="plan-item h3">Future Directions</h3>
+          <div class="vv-future" data-aos="fade-up">
+            <div class="vv-future-item"><i class="bi bi-qr-code"></i><p><strong>Marker-free anchoring</strong> using patient recognition rather than QR codes, supporting unrestricted head movement</p></div>
+            <div class="vv-future-item"><i class="bi bi-broadcast"></i><p><strong>Live sensor integration</strong> replacing pre-generated sequences with real physiological data feeds</p></div>
+            <div class="vv-future-item"><i class="bi bi-sliders"></i><p><strong>Multi-level urgency encoding</strong> to distinguish very-low, low, high, and very-high alarm states</p></div>
+            <div class="vv-future-item"><i class="bi bi-graph-up-arrow"></i><p><strong>Pre-alarm trend encoding</strong> — subtle animation showing values approaching threshold within normal range</p></div>
+            <div class="vv-future-item"><i class="bi bi-eyeglasses"></i><p><strong>Lighter HMD platform</strong> — glasses-form-factor devices to address comfort, patient-trust, and hygiene concerns</p></div>
+            <div class="vv-future-item"><i class="bi bi-hospital"></i><p><strong>In-situ clinical validation</strong> with practicing clinicians in real OR and ICU environments</p></div>
+          </div>
+        </div>
+
+        <!-- ════ CTA BAND ════ -->
+        <div class="vv-cta" data-aos="fade-up">
+          <div>
+            <h3>Curious about this project?</h3>
+            <p>The full 80-page thesis covers the complete literature review, system implementation, statistical analysis, and design implications.</p>
+          </div>
+          <div class="vv-cta-btns">
+            <a href="https://drive.google.com/file/d/1Hen6zwlDkS1aQ4eoG6kzqlk6P0nekRrT/view?usp=sharing" target="_blank" rel="noopener" class="vv-btn-primary">
+              <i class="bi bi-file-earmark-text"></i> Full Thesis Report
+            </a>
+            <a href="https://www.linkedin.com/in/khushinaik20/" target="_blank" rel="noopener" class="vv-btn-ghost">
+              <i class="bi bi-linkedin"></i> Connect
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /container -->
+    </section>
+  </main>
+
+  <footer id="footer" class="footer position-relative">
+    <div class="container">
+      <div class="credits">Adapted by Khushi from <a href="https://bootstrapmade.com/">BootstrapMade</a></div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS (identical to original) -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // ── TL;DR OVERVIEW TOGGLE ──────────────────
+    const trigger = document.getElementById('vvTrigger');
+    const body    = document.getElementById('vvBody');
+    const chevron = document.getElementById('vvChevron');
+    let open = true;
+
+    trigger.addEventListener('click', () => {
+      open = !open;
+      body.classList.toggle('collapsed', !open);
+      chevron.innerHTML = open
+        ? '<i class="bi bi-chevron-up"></i>'
+        : '<i class="bi bi-chevron-down"></i>';
+    });
+
+    // ── STICKY PAGE NAV ACTIVE STATE ───────────
+    const sections = document.querySelectorAll('[id^="vv-"]');
+    const navLinks = document.querySelectorAll('#vvNav a');
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(l =>
+            l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id)
+          );
+        }
+      });
+    }, { threshold: 0.2, rootMargin: '-10% 0px -65% 0px' });
+
+    sections.forEach(s => io.observe(s));
+  </script>
+
+</body>
+</html>
