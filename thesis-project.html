@@ -747,7 +747,7 @@
                     </div>
                     <div class="tool-text">
                         <span class="small-badge-text">
-                            UX Design
+                            UX Research
                         </span>
                         <span class="small-badge-text">
                             Augmented Reality
@@ -757,6 +757,9 @@
                         </span>
                         <span class="small-badge-text">
                             User Research
+                        </span>
+                        <span class="small-badge-text">
+                            Mixed Methods Research
                         </span>
                     </div>
                 </div><!-- End Page Title -->
@@ -772,7 +775,7 @@
                     <div class="col-md-3">
                         <div class="project-point-item" data-aos="fade-left" data-aos-delay="200">
                             <h6>TIMELINE </h6>
-                            <p>September 2023 - Present</p>
+                            <p>September 2023 - May 2026</p>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -791,132 +794,20 @@
                     </div>
                 </div>
 
-                <!-- ════ PROJECT OVERVIEW CARD ════ -->
-                <div class="vv-overview" id="vv-overview" data-aos="fade-up" data-aos-delay="120">
-                  <div class="vv-overview-header">
-                    <span class="vv-tl-chip">Executive Overview</span>
-                    <h3 class="vv-overview-heading">VitalViz at a glance</h3>
-                    <p class="vv-overview-hook">A quick scan for busy reviewers — tap a topic for concise bullets. The full case study lives below.</p>
-                  </div>
-
-                  <div class="vv-overview-tabs" role="tablist" aria-label="Project overview topics">
-                    <button type="button" class="vv-tab-btn active" role="tab" aria-selected="true" aria-controls="panel-context" data-tab="context" id="tab-context">
-                      <i class="bi bi-building"></i> Context
-                    </button>
-                    <button type="button" class="vv-tab-btn" role="tab" aria-selected="false" aria-controls="panel-problem" data-tab="problem" id="tab-problem">
-                      <i class="bi bi-exclamation-triangle"></i> Problem
-                    </button>
-                    <button type="button" class="vv-tab-btn" role="tab" aria-selected="false" aria-controls="panel-process" data-tab="process" id="tab-process">
-                      <i class="bi bi-signpost-split"></i> Process
-                    </button>
-                    <button type="button" class="vv-tab-btn" role="tab" aria-selected="false" aria-controls="panel-proposal" data-tab="proposal" id="tab-proposal">
-                      <i class="bi bi-lightbulb"></i> Proposal
-                    </button>
-                    <button type="button" class="vv-tab-btn" role="tab" aria-selected="false" aria-controls="panel-result" data-tab="result" id="tab-result">
-                      <i class="bi bi-graph-up-arrow"></i> Result
-                    </button>
-                  </div>
-
-                  <div class="vv-overview-panels">
-                    <div class="vv-overview-panel active" id="panel-context" role="tabpanel" aria-labelledby="tab-context">
-                      <ul class="vv-overview-list">
-                        <li><strong>M.Sc. thesis</strong> at McGill University (ECE), Shared Reality Lab — designing for high-stakes ICU and operating room environments.</li>
-                        <li>Clinical vital sign monitors are essential, but their <strong>alarm-heavy, screen-fixed</strong> design creates well-documented usability failures.</li>
-                        <li>Explored whether <strong>augmented reality</strong> could keep critical vitals perceptually available without adding more noise.</li>
-                        <li>Built and evaluated a <strong>HoloLens 2 prototype</strong> with a 20-participant, REB-approved controlled study.</li>
-                      </ul>
-                    </div>
-                    <div class="vv-overview-panel" id="panel-problem" role="tabpanel" aria-labelledby="tab-problem" hidden>
-                      <ul class="vv-overview-list">
-                        <li><strong>Alarm fatigue</strong> — clinicians face hundreds of alarms per shift; many are non-actionable, training staff to tune out the sounds that matter.</li>
-                        <li><strong>Monitors out of sight</strong> — during procedures, displays are often behind the clinician, forcing gaze shifts away from the patient.</li>
-                        <li><strong>Cognitive overload</strong> — reading waveforms and numbers under multitasking demands active interpretation (“I had to do some math to know if it was high or low”).</li>
-                        <li><strong>Environmental noise</strong> — auditory alarms add to ICU/OR sound levels that already exceed recommended limits.</li>
-                      </ul>
-                    </div>
-                    <div class="vv-overview-panel" id="panel-process" role="tabpanel" aria-labelledby="tab-process" hidden>
-                      <ul class="vv-overview-list">
-                        <li><strong>Field observation</strong> and interviews with anesthesiology and HCI experts to ground design in real clinical workflows.</li>
-                        <li><strong>Iterative ideation</strong> — sketching notification concepts that balance salience with low distraction in busy settings.</li>
-                        <li><strong>High-fidelity AR prototype</strong> in Unity for HoloLens 2, iterating on animation, color, and spatial placement.</li>
-                        <li><strong>Controlled user study</strong> — within-subjects design with a Fruit Ninja distractor task to simulate clinical multitasking.</li>
-                      </ul>
-                    </div>
-                    <div class="vv-overview-panel" id="panel-proposal" role="tabpanel" aria-labelledby="tab-proposal" hidden>
-                      <ul class="vv-overview-list">
-                        <li><strong>VitalViz</strong> — an AR vital sign display using three animated spheres for HR (green), BP (red), and SpO₂ (blue).</li>
-                        <li><strong>Visual-only alarms</strong> — urgency conveyed through size, color saturation, and motion — no additional audio noise.</li>
-                        <li><strong>Always in view</strong> — vitals anchored in the clinician’s field of vision via head-mounted display, regardless of position.</li>
-                        <li><strong>Intuitive encoding</strong> — e.g. a larger, brighter red sphere moving closer signals a high BP alarm without reading numbers.</li>
-                      </ul>
-                    </div>
-                    <div class="vv-overview-panel" id="panel-result" role="tabpanel" aria-labelledby="tab-result" hidden>
-                      <ul class="vv-overview-list">
-                        <li><strong>↑18% alarm detection accuracy</strong> with AR vs. a conventional monitor replica (0.98 vs. 0.80).</li>
-                        <li><strong>↑15% multitasking performance</strong> — higher distractor-task scores while monitoring vitals under AR.</li>
-                        <li><strong>Statistically significant</strong> improvement in alarm accuracy for both non-clinicians and nursing students (p &lt; .001).</li>
-                        <li><strong>No trade-off</strong> in vital trend interpretation — AR matched baseline performance on trend-reading tasks.</li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div class="vv-overview-stats">
-                    <div class="vv-stat-row">
-                      <div class="vv-stat" data-aos="zoom-in" data-aos-delay="50">
-                        <div class="vv-stat-num">↑18%</div>
-                        <div class="vv-stat-lbl">Alarm detection<br><span class="vv-stat-sub">AR 0.98 vs. 0.80</span></div>
-                      </div>
-                      <div class="vv-stat" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="vv-stat-num">↑15%</div>
-                        <div class="vv-stat-lbl">Multitasking score<br><span class="vv-stat-sub">Higher under AR</span></div>
-                      </div>
-                      <div class="vv-stat" data-aos="zoom-in" data-aos-delay="150">
-                        <div class="vv-stat-num">20</div>
-                        <div class="vv-stat-lbl">Participants<br><span class="vv-stat-sub">2 groups · REB-approved</span></div>
-                      </div>
-                      <div class="vv-stat" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="vv-stat-num">p&lt;.001</div>
-                        <div class="vv-stat-lbl">Significance<br><span class="vv-stat-sub">Alarm accuracy</span></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
+               
                 <section id="case-study-overview" class="section">
   <div class="container">
 
     <div class="bento-grid">
 
-      <!-- CONTEXT — full width top -->
-      <div class="bento-tile tile-context">
-        <div class="tile-accent"></div>
-        <p class="tile-label"><i class="bi bi-geo-alt"></i> Context</p>
-        <h3 class="tile-title">Project Name — one-line tagline goes here</h3>
-        <div class="meta-chips">
-          <span class="meta-chip"><i class="bi bi-calendar3"></i> Month Year – Month Year</span>
-          <span class="meta-chip"><i class="bi bi-building"></i> Organisation / Course</span>
-          <span class="meta-chip"><i class="bi bi-people"></i> Solo · Team of N</span>
-          <span class="meta-chip"><i class="bi bi-tag"></i> UX Research · Dev</span>
-        </div>
-      </div>
-
-      <!-- ROLE -->
-      <div class="bento-tile tile-role">
-        <div class="tile-accent" style="background: var(--muted-accent)"></div>
-        <p class="tile-label"><i class="bi bi-person-check"></i> My role</p>
-        <ul class="role-list">
-          <li><span class="role-dot" style="background: var(--accent-color)"></span>UX Researcher</li>
-          <li><span class="role-dot" style="background: var(--muted-accent)"></span>Interaction Designer</li>
-          <li><span class="role-dot" style="background: #5DCAA5"></span>Developer</li>
-        </ul>
-      </div>
+      
 
       <!-- PROBLEM -->
       <div class="bento-tile tile-problem">
         <div class="tile-accent" style="background: #D85A30"></div>
         <p class="tile-label"><i class="bi bi-exclamation-triangle"></i> Problem</p>
-        <h4 class="tile-subtitle">Who was struggling, with what, and why it mattered.</h4>
-        <p class="tile-body">Write 2–3 sentences. Name the user, the pain point, and the consequence. E.g. "ICU nurses were missing critical alarms due to sensory overload — a direct patient safety risk."</p>
+        <h4 class="tile-subtitle">Clinicians miss alarms when attention is split.</h4>
+        <p class="tile-body">ICU and OR staff face alarm fatigue, noisy environments, and monitors that are rarely in their direct line of sight. Critical alerts are delayed or overlooked, creating risk for patient safety.</p>
       </div>
 
       <!-- PROCESS -->
@@ -924,11 +815,11 @@
         <div class="tile-accent" style="background: #1D9E75"></div>
         <p class="tile-label"><i class="bi bi-diagram-3"></i> Process</p>
         <ol class="process-steps">
-          <li><strong>Discover</strong> — method used (interviews, desk research, etc.)</li>
-          <li><strong>Define</strong> — key insight or HMW framing</li>
-          <li><strong>Ideate</strong> — sketches, lo-fi wireframes, concepts explored</li>
-          <li><strong>Build</strong> — what was developed and in what stack</li>
-          <li><strong>Test</strong> — evaluation method, who was tested, iterations made</li>
+          <li><strong>Discover</strong> — contextual inquiry and expert consultation with clinicians.</li>
+          <li><strong>Define</strong> — translated insights into focus areas for attention and visibility.</li>
+          <li><strong>Ideate</strong> — sketched and prototyped AR alarm concepts with spatial cues.</li>
+          <li><strong>Build</strong> — developed an AR vital sign monitor prototype and data-collection interfaces.</li>
+          <li><strong>Test</strong> — evaluated with 23 participants in a controlled within-subjects study.</li>
         </ol>
       </div>
 
@@ -936,12 +827,13 @@
       <div class="bento-tile tile-proposal">
         <div class="tile-accent"></div>
         <p class="tile-label"><i class="bi bi-lightbulb"></i> Proposal</p>
-        <p class="tile-body">One sentence describing the solution clearly. What did you design or build, and for whom?</p>
+        <p class="tile-body">Designed VitalViz: an AR-first vital sign display that keeps critical alarms visible in the clinician’s field of view using spatial position, color, and motion instead of relying on audio alone.</p>
         <div class="proposal-tags">
-          <span class="proposal-tag tag-design">Key feature 1</span>
-          <span class="proposal-tag tag-design">Key feature 2</span>
-          <span class="proposal-tag tag-dev">Tech used</span>
-          <span class="proposal-tag tag-dev">Tech used</span>
+          <span class="proposal-tag tag-design">Head-mounted Devices</span>
+          <span class="proposal-tag tag-design">Unity</span>
+          <span class="proposal-tag tag-design">Node.js</span>
+          <!-- <span class="proposal-tag tag-dev">HoloLens 2</span>
+          <span class="proposal-tag tag-dev">Unity Prototype</span> -->
         </div>
       </div>
 
@@ -951,12 +843,20 @@
         <p class="tile-label"><i class="bi bi-graph-up-arrow"></i> Results</p>
         <div class="result-stats">
           <div class="stat-block">
-            <span class="stat-num">00%</span>
-            <span class="stat-label">Metric label</span>
+            <span class="stat-num">18%</span>
+            <span class="stat-label">Alarm detection accuracy lift</span>
           </div>
           <div class="stat-block">
-            <span class="stat-num" style="color: var(--accent-color)">00+</span>
-            <span class="stat-label">Metric label</span>
+            <span class="stat-num" style="color: var(--accent-color)">15%</span>
+            <span class="stat-label">Multitasking performance gain</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-num">20</span>
+            <span class="stat-label">Study participants</span>
+          </div>
+          <div class="stat-block">
+            <span class="stat-num">p&lt;.001</span>
+            <span class="stat-label">Statistical significance</span>
           </div>
         </div>
       </div>
@@ -965,19 +865,25 @@
   </div>
 </section>
 
-                <div class="col-lg-11">
+                <div class="container">
                     <div class="section-title" data-aos="fade-up">
-                        <h2>In Depth</h2>
+                        <h2>Research Question</h2>
                         <div class="row">
                             <div class="col-lg-1"></div>
                             <div class="col-lg-10 test">
-                                <p>I designed and developed an Augmented Reality (AR) display for vital signs, aimed at
+                                <p>Clinicians monitoring patients in the critical care rely on audio notifications and bedside monitors 
+                                    — but alarm fatigue and split attention between the patient and the monitor cause missed or delayed
+                                     detection of critical alarms. <br><br><strong><i>''An AR display that encodes alarm urgency spatially (rather than
+                                      just visually or audibly) help clinicians detect and respond to critical alarms faster and more accurately, without adding to their cognitive load?''</i></strong></p>
+                                <!-- <p>I designed and developed an Augmented Reality (AR) display for vital signs, aimed at
                                     improving situational awareness in clinical settings like Intensive Care Units (ICU)
                                     and Operating Rooms (OR), where traditional bedside monitors rely heavily on
-                                    auditory alarms and peripheral screens. <br><br>This system visualizes three
+                                    auditory alarms and peripheral screens. 
+                                    <br><br>This system visualizes three
                                     critical vital signs: heart rate (HR), blood pressure (BP), and oxygen saturation
                                     (SpO₂) — using animated, color-coded 3D spheres that are always in the clinician’s
-                                    field of view via a Head-Mounted Display (HoloLens 2).</p>
+                                    field of view via a Head-Mounted Display (HoloLens 2).
+                                </p> -->
                             </div>
                             <div class="col-lg-1"></div>
 
@@ -1015,12 +921,44 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="features mt-4 portfolio-description-item">
+                            <div>
+                                  <div class="row testimonial-masonry">
+
+                                        <div class="testimonial-item col-lg-5" data-aos="fade-up">
+                                            <div class="testimonial-content">
+                                                <div class="quote-pattern">
+                                                    <i class="bi bi-quote"></i>
+                                                </div>
+                                                <p>I might be out of the ICU, and don't have access to auditory
+                                                    alarms...
+                                                </p>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-2"></div>
+                                        <div class="testimonial-item col-lg-5" data-aos="fade-up">
+                                            <div class="testimonial-content">
+                                                <div class="quote-pattern">
+                                                    <i class="bi bi-quote"></i>
+                                                </div>
+
+                                                <p>The anesthesia machine (with the patient monitor) is behind them and
+                                                    usually to the right..</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+
+
                         <div class="features mt-4 portfolio-description-item">
 
 
                             <div class="row gy-3 align-items-center">
                                 <div class="col-md-6 thesis-problem-point">
-                                    <h3>Background</h3>
+                                    <h3>The Problem</h3>
                                     <div>
                                         <h5><i class="bi bi-asterisk project-point-icon"></i>Alarm Fatigue & Noise
                                             Overload</h5>
@@ -1037,11 +975,11 @@
 
                                     </div>
                                     <div>
-                                        <h5><i class="bi bi-asterisk project-point-icon"></i>Challenges in Critical
-                                            Field Settings</h5>
-                                        <p>In military evacuations or space-constrained scenarios, bright screens and
-                                            alarm sounds can compromise safety, while bulky equipment strains limited
-                                            resources.</p>
+                                        <h5><i class="bi bi-asterisk project-point-icon"></i>UI Not optimized for Interpretation</h5>
+                                        <p>The conventional format of physiological data representation (waveforms and numbers) requires high cognitive effort from clinicians.
+                                            Several parameters can share the same or very similar values, which affects how
+different each variable appears.
+                                        </p>
 
                                     </div>
 
@@ -1075,11 +1013,11 @@
                                 <div class="col-lg-1"></div>
                                 <div class="col-lg-5">
                                     <div class="test text-justify">
-                                <ul>
-                                    <li class="soln-feature">Each sphere represents a vital: HR (green), BP (red), and SpO₂ (blue).</li>
-                                    <li class="soln-feature">Sole reliance on visuals to convey vital states (no audio noise)</li>
-                                    <li class="soln-feature">Leveraging AR's ability to overlay virtual objects anywhere in the real world (better accessibility)</li>
-                                    <li class="soln-feature">Vitals that always stay in clinician's field of view (lesser distraction)</li>
+                                <ul class="vv-feats">
+                                    <li><span class="vv-dot"></span>Each sphere represents a vital: HR (green), BP (red), and SpO₂ (blue).</li>
+                                    <li><span class="vv-dot"></span>Sole reliance on visuals to convey vital states without audio noise.</li>
+                                    <li><span class="vv-dot"></span>Leveraged AR's ability to overlay virtual objects anywhere in the clinician’s field of view.</li>
+                                    <li><span class="vv-dot"></span>Designed vitals to remain visible at all times, reducing distraction.</li>
                                 </ul>
                             </div>
                                 </div>
@@ -1094,27 +1032,102 @@
 
                     </div>
                 </div>
-                <div class="col-lg-11">
-                    <div class="section-title container" data-aos="fade-up">
-                        <h2>Design Phase</h2>
-                        <div class="row">
-                            <div class="col-lg-1"></div>
-                            <div class="col-lg-10 test text-justify">
-                                <p>This phase brought together real-world observations, user research, and early idea
-                                    exploration to inform and shape my solution.
-                                </p>
-                            </div>
-                            <div class="col-lg-1"></div>
 
+                <div>
+                    <div class="section-title" data-aos="fade-up">
+                        <h2>Methodology</h2>
+
+                        <div class="methods-content">
+                          <div class="row gy-4">
+                            <div class="col-lg-7">
+                              <div class="vv-spec" data-aos="fade-up">
+                                <h4><i class="bi bi-journal-text"></i> Study Overview</h4>
+                                <div class="vv-spec-grid">
+                                  <div>
+                                    <div class="vv-spec-lbl">Design</div>
+                                    <div class="vv-spec-val">Within-subjects — AR display vs. conventional monitor; counterbalanced order</div>
+                                  </div>
+                                  <div>
+                                    <div class="vv-spec-lbl">Participants</div>
+                                    <div class="vv-spec-val">23 participants — mix of non-clinicians and nursing students / RNs; recruited at McGill University</div>
+                                  </div>
+                                  <div>
+                                    <div class="vv-spec-lbl">Setting</div>
+                                    <div class="vv-spec-val">Controlled lab environment with simulated patient scenarios and a visual workload task</div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="vv-dec" data-aos="fade-up">
+                                <div class="vv-dec-head">
+                                  <div class="vv-dec-num">1</div>
+                                  <h4>Procedure</h4>
+                                </div>
+                                <p>Participants completed both conditions while performing a distractor task (Fruit Ninja) to simulate visual workload. They monitored two simulated patients and paused to report any critical alarms. Conditions were trained and counterbalanced to reduce learning effects.</p>
+                              </div>
+
+                              <div class="vv-dec" data-aos="fade-up">
+                                <div class="vv-dec-head">
+                                  <div class="vv-dec-num">2</div>
+                                  <h4>Measures</h4>
+                                </div>
+                                <p>Primary outcomes: alarm detection accuracy and response time. Secondary measures: SUS usability score and post-study qualitative interviews to capture user experience and preferences.</p>
+                              </div>
+
+                              <div class="vv-note" data-aos="fade-up">
+                                <i class="bi bi-info-circle"></i>
+                                <p><strong>Why this approach?</strong> Combining a simulated multitasking task with within-subjects design allowed us to directly compare alarm performance while controlling for individual differences.</p>
+                              </div>
+                            </div>
+
+                            <div class="col-lg-5">
+                              <div class="vv-card" data-aos="fade-up">
+                                <div class="vv-card-icon" style="background: color-mix(in srgb, var(--accent-color), transparent 88%);">
+                                  <i class="bi bi-people"></i>
+                                </div>
+                                <h4>Participants</h4>
+                                <p>23 participants — mixed expertise. Inclusion prioritized representation of intended end-users and naive users to evaluate learnability.</p>
+                              </div>
+
+                              <div class="vv-card" data-aos="fade-up">
+                                <div class="vv-card-icon" style="background: color-mix(in srgb, var(--accent-color), transparent 88%);">
+                                  <i class="bi bi-tools"></i>
+                                </div>
+                                <h4>Data Analysis</h4>
+                                <p>Quantitative: GLME and ANOVA on accuracy and response times to control for learning and repeated measures. Qualitative: thematic analysis of interview transcripts.</p>
+                              </div>
+
+                              <div class="vv-card" data-aos="fade-up">
+                                <div class="vv-card-icon" style="background: color-mix(in srgb, var(--accent-color), transparent 88%);">
+                                  <i class="bi bi-list-check"></i>
+                                </div>
+                                <h4>Key Protocol Notes</h4>
+                                <ul class="vv-feats">
+                                  <li><span class="vv-dot"></span> Counterbalanced order to mitigate sequence effects</li>
+                                  <li><span class="vv-dot"></span> Standardized training for both conditions</li>
+                                  <li><span class="vv-dot"></span> Pause-and-report method for alarm detection</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
                         </div>
 
-                        <div class="plan-item testimonials first-plan-item">
+                    </div>
+
+                </div>
+                <div class="">
+                    <div class="section-title" data-aos="fade-up">
+                        <h2>Design Phase</h2>
+                        <p class="test">This phase brought together real-world observations, user research, and early idea exploration to shape a practical AR solution.</p>
+                    </div>
+
+                    <!-- <div class="plan-item testimonials first-plan-item">
 
 
                             <h3><span><i class="bi bi-search project-heading-icon observation-quote"></i></span>
                                 Observing Users</h3>
                             <div class="plan-item-description">
-                                <div class="row gy-3 align-items-center">
+                                <div class="row gy-3 align-items-center plan-item">
                                     <div class="col-lg-5 testimonial-masonry">
 
                                         <div class="testimonial-item" data-aos="fade-up">
@@ -1147,14 +1160,14 @@
                                     </div>
 
                                 </div>
-                            </div>
+                            </div> 
 
 
 
-                        </div>
+                        </div>-->
 
 
-                        <div class="plan-item col-lg-11">
+                        <div class="plan-item">
 
                             <h3><span><i class="bi bi-bullseye project-heading-icon"></i></span> Brainstorming the Solution</h3>
                             <p>These are some of the sketches I explored to design my prototype. My aim was to come up with a notification design that grabs attention but is not overly distracting given the nature of clinicians' work.</p>
@@ -1198,39 +1211,90 @@
 
         <section id="study-results" class="study-results col-lg-11 container">
             <div class="section-title" data-aos="fade-up">
-                <h2>Study Results</h2>
+                <h2>Findings</h2>
             </div>
-            <div class="row">
-                <div class="col-lg-2"></div>
+            <!-- <div class="row justify-content-center">
                 <div class="col-lg-8 test">
-                    <p>
-                        To evaluate the effectiveness of our AR display in improving alarm saliency, we conducted a
-                        two-week-long within-subjects user study comparing our AR display to a mock conventional monitor
-                        interface in a controlled lab setting.
-                    </p>
-                    <p>
-                        To simulate visual workload, participants performed a distractor task using the game 'Fruit Ninja' while monitoring patient vitals.
-                    </p>
+                    <p>In a controlled within-subjects study, the AR display improved alarm detection and supported better performance during a visual workload task.</p>
+                    <ul class="vv-feats">
+                      <li><span class="vv-dot"></span>AR display produced consistently higher critical alarm accuracy than the conventional monitor replica.</li>
+                      <li><span class="vv-dot"></span>Participants maintained better Fruit Ninja performance while monitoring patient vitals.</li>
+                      <li><span class="vv-dot"></span>Study design balanced learning effects with a counterbalanced presentation order.</li>
+                    </ul>
                 </div>
-                <div class="col-lg-2"></div>
-
+            </div> -->
+            <p>With Non-clinicians</p>
+            <div class="vv-res-stats" data-aos="fade-up" data-aos-delay="100">
+              <div class="vv-res-stat">
+                <div class="vv-res-num">22.8%</div>
+                <div class="vv-res-lbl">Alarm detection accuracy increase</div>
+                <div class="vv-res-sub">AR vs conventional monitor</div>
+              </div>
+              <div class="vv-res-stat">
+                <div class="vv-res-num">14.55%</div>
+                <div class="vv-res-lbl">Multitasking performance gain</div>
+                <div class="vv-res-sub">Higher game scores under AR</div>
+              </div>
+              <div class="vv-res-stat">
+                <div class="vv-res-num">9.3%</div>
+                <div class="vv-res-lbl">Response time reduction</div>
+                <div class="vv-res-sub">Over baseline</div>
+              </div>
             </div>
 
-            <div class="row">
+             <p>With Clinicians</p>
+            <div class="vv-res-stats" data-aos="fade-up" data-aos-delay="100">
+              <div class="vv-res-stat">
+                <div class="vv-res-num">13.58%</div>
+                <div class="vv-res-lbl">Alarm detection accuracy increase</div>
+                <div class="vv-res-sub">AR vs conventional monitor</div>
+              </div>
+              <div class="vv-res-stat">
+                <div class="vv-res-num">8.39%</div>
+                <div class="vv-res-lbl">Multitasking performance gain</div>
+                <div class="vv-res-sub">Higher game scores under AR</div>
+              </div>
+              <div class="vv-res-stat">
+                <div class="vv-res-num">7.01%</div>
+                <div class="vv-res-lbl">Response time reduction</div>
+                <div class="vv-res-sub">Over baseline</div>
+              </div>
+            </div>
+
+            <div class="row mt-4" data-aos="fade-up" data-aos-delay="150">
                 <div class="col-lg-1"></div>
                 <div class="col-lg-5">
                     <div class="plan-item-media project-picture">
-                        <img src="assets/img/portfolio/thesis-project/alarm-accuracy-p1-combined.png" alt="Profile Image"
-                            class="img-fluid">
+                        <figure>
+                            <img src="assets/img/portfolio/thesis-project/alarm-accuracy-p1-combined.png" alt="Alarm accuracy graph" class="img-fluid">
+                            <figcaption>Alarm detection accuracy comparison between AR display and conventional monitor.</figcaption></figure>
+                        <!-- <img src="assets/img/portfolio/thesis-project/alarm-accuracy-p1-combined.png" alt="Alarm accuracy graph" class="img-fluid"> -->
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <div class="plan-item-media project-picture">
-                        <img src="assets/img/portfolio/thesis-project/fn-scores-combined.png" alt="Profile Image"
-                            class="img-fluid">
+                        <figure>
+                            <img src="assets/img/portfolio/thesis-project/fn-scores-combined.png" alt="Multitasking performance graph" class="img-fluid">
+                            <figcaption>Multitasking performance comparison between AR display and conventional monitor.</figcaption>
+                        </figure>
+                        <!-- <img src="assets/img/portfolio/thesis-project/fn-scores-combined.png" alt="Fruit Ninja performance graph" class="img-fluid"> -->
                     </div>
                 </div>
                 <div class="col-lg-1"></div>
+            </div>
+
+            
+            <div class="row justify-content-center">
+                
+                <div class="col-lg-8 test">
+                    <h3>What these results meant..?</h3>
+                    <!-- <p>In a controlled within-subjects study, the AR display improved alarm detection and supported better performance during a visual workload task.</p> -->
+                    <ul class="vv-feats">
+                      <li><span class="vv-dot"></span>Higher alarm identification accuracy indicates that the AR display was easier to interpret and salient due to colors and movements.</li>
+                      <li><span class="vv-dot"></span>Even though the response times were similar, the AR display has the potential to outperform a traditional monitor if it is further away from a clinician. Even in the current setup they had to move their heads back and forth.</li>
+                      <li><span class="vv-dot"></span>Participants could multitask better while using the AR display because they did not have to divide their attention since the information was always visible to them.</li>
+                    </ul>
+                </div>
             </div>
 
         </section>
