@@ -1709,7 +1709,7 @@ section,
 
 .skills .skill-item h4 {
   font-size: 16px;
-  margin-bottom: 8px;
+  /* margin-bottom: 8px; */
 }
 
 .skills .skill-item .skill-percentage {
@@ -3167,11 +3167,12 @@ section,
   border-bottom-left-radius: 20px; 
 }
 
-.questions h2,h4{
+.questions h2{
   padding-left: 1rem;
 }
 
 .questions h4{
+  padding-left: 1rem;
   font-weight: 400;
 }
 /*.questions .question-highlight{
